@@ -85,6 +85,15 @@ const mubinsoCategories: ProductCategory[] = [
       { name: "긴급 이송차량", desc: "시내(관내) 제공", image: "/images/products/emergency-vehicle.jpg" },
     ],
   },
+  {
+    title: "무료 서비스",
+    items: [
+      { name: "장지 상담", image: "/images/products/cemetery-consulting.jpg" },
+      { name: "고인 목욕", image: "/images/products/body-bathing.jpg" },
+      { name: "화장 예약", image: "/images/products/cremation-booking.jpg" },
+      { name: "모바일 부고장", image: "/images/products/mobile-obituary.jpg" },
+    ],
+  },
 ];
 
 /** 일반장 포함 품목 */
