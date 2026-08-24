@@ -76,7 +76,7 @@ function buildRows(planId: ProductPlanId): Row[] {
 
 export default function ServiceCards() {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-accent/40">
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-2xl font-bold md:text-3xl">

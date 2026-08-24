@@ -45,7 +45,7 @@ export default function HistorySection() {
             type="button"
             onClick={() => emblaApi?.scrollPrev()}
             aria-label="이전 이력"
-            className="absolute left-0 top-1/2 z-10 hidden h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-colors hover:border-primary hover:text-primary sm:flex md:-left-4"
+            className="absolute left-0 top-1/2 z-10 hidden h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-colors hover:border-primary hover:text-primary sm:flex md:-left-6 lg:-left-10 xl:-left-14"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
@@ -85,7 +85,7 @@ export default function HistorySection() {
             type="button"
             onClick={() => emblaApi?.scrollNext()}
             aria-label="다음 이력"
-            className="absolute right-0 top-1/2 z-10 hidden h-9 w-9 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-colors hover:border-primary hover:text-primary sm:flex md:-right-4"
+            className="absolute right-0 top-1/2 z-10 hidden h-9 w-9 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-colors hover:border-primary hover:text-primary sm:flex md:-right-6 lg:-right-10 xl:-right-14"
           >
             <ChevronRight className="h-4 w-4" />
           </button>

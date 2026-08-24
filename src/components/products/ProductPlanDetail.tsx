@@ -136,7 +136,7 @@ export default function ProductPlanDetail({
       {/* 안내 사항 */}
       <section className="pb-16 pt-0 md:pb-20">
         <div className="container">
-          <div className="mx-auto max-w-2xl rounded-xl border border-border bg-secondary/30 p-6 md:p-8">
+          <div className="rounded-xl border border-border bg-secondary/30 p-6 md:p-8">
             <h3 className="font-serif text-base font-bold">안내 사항</h3>
             <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground">
               <li>* 장례 비용은 발인 전에 정산합니다.</li>
@@ -149,6 +149,14 @@ export default function ProductPlanDetail({
               <li>
                 * 자택에서 이송할 경우 이송비 및 검안 비용이 별도로
                 청구됩니다.
+              </li>
+              <li>
+                * 본 상품의 장례서비스 기간은 3일장 기준이며, 기준일 초과 시
+                추가 요금이 발생할 수 있습니다.
+              </li>
+              <li>
+                * 고인 전용 리무진은 1차 장지(화장 시 : 화장장, 매장 시 :
+                매장지)까지 입니다.
               </li>
             </ul>
           </div>

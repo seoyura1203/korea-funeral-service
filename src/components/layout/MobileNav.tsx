@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ChevronDown, Phone, X } from "lucide-react";
@@ -28,9 +29,13 @@ export default function MobileNav({ open, onOpenChange, phone }: MobileNavProps)
         >
           <Dialog.Title className="sr-only">모바일 메뉴</Dialog.Title>
           <div className="flex h-16 items-center justify-between border-b border-border px-5">
-            <span className="font-serif text-lg font-bold text-primary">
-              한국장례서비스
-            </span>
+            <Image
+              src="/images/brand/logo.png"
+              alt="한국장례서비스"
+              width={857}
+              height={151}
+              className="h-6 w-auto"
+            />
             <Dialog.Close asChild>
               <button aria-label="메뉴 닫기" className="rounded-md p-2">
                 <X className="h-5 w-5" />

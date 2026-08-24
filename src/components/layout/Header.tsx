@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Phone } from "lucide-react";
@@ -33,10 +34,15 @@ export default function Header({ phone }: { phone: string }) {
       </div>
 
       <div className="container flex h-16 items-center justify-between md:h-20">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-serif text-xl font-bold tracking-tight text-primary md:text-2xl">
-            한국장례서비스
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/brand/logo.png"
+            alt="한국장례서비스"
+            width={857}
+            height={151}
+            priority
+            className="h-7 w-auto md:h-9"
+          />
         </Link>
 
         {/* 데스크톱 내비게이션 */}

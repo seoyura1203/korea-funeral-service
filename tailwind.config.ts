@@ -91,7 +91,14 @@ const config: Config = {
           "system-ui",
           "sans-serif",
         ],
-        serif: ["var(--font-serif)", "Noto Serif KR", "serif"],
+        serif: [
+          "var(--font-serif)",
+          "Pretendard",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "system-ui",
+          "sans-serif",
+        ],
       },
       keyframes: {
         "accordion-down": {
