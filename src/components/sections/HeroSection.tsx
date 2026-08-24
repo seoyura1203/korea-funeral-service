@@ -1,237 +1,82 @@
 "use client";
 
-import * as React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import { ChevronLeft, ChevronRight, Phone } from "lucide-react";
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { trustBadges } from "@/lib/site-config";
-import type { Banner } from "@/types/supabase";
-
-// image_url이 없는 배너(또는 fallback)일 때 순환 적용되는 그라디언트 팔레트
-const GRADIENTS = [
-  "from-brand-900 via-brand-800 to-brand-700",
-  "from-stone-800 via-stone-700 to-brand-700",
-  "from-brand-950 via-brand-800 to-stone-700",
-];
-
-type NormalizedSlide = {
-  id: string;
-  title: string;
-  subtitle: string | null;
-  href: string;
-  imageUrl: string | null;
-  gradient: string;
-};
-
-function normalizeBanner(banner: Banner, idx: number): NormalizedSlide {
-  return {
-    id: banner.id,
-    title: banner.title,
-    subtitle: banner.subtitle,
-    href: banner.link_url || "/contact",
-    imageUrl: banner.image_url,
-    gradient: GRADIENTS[idx % GRADIENTS.length],
-  };
-}
-
-// banners 테이블에 노출 가능한 배너가 하나도 없을 때(어드민에서 아직 등록 전, 또는
-// 전부 비활성화한 경우) 화면이 비지 않도록 보여주는 기본 배너입니다.
-const DEFAULT_FALLBACK_SLIDE: NormalizedSlide = {
-  id: "default-fallback",
-  title: "정직하고 투명한\n상조 서비스",
-  subtitle: "숨겨진 비용 없이, 정직한 안내로 임종부터 발인까지 함께합니다.",
-  href: "/contact",
-  imageUrl: null,
-  gradient: GRADIENTS[0],
-};
-
-export default function HeroSection({
-  banners,
-  phone,
-}: {
-  banners: Banner[];
-  phone: string;
-}) {
-  const slides = React.useMemo(() => {
-    const normalized = banners.map((b, idx) => normalizeBanner(b, idx));
-    // 노출 가능한 배너가 없으면 기본 배너 1장으로 대체합니다.
-    return normalized.length > 0 ? normalized : [DEFAULT_FALLBACK_SLIDE];
-  }, [banners]);
-
-  const autoplay = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: false })
-  );
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    autoplay.current,
-  ]);
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
-  React.useEffect(() => {
-    if (!emblaApi) return;
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
-    emblaApi.on("select", onSelect);
-    onSelect();
-    return () => {
-      emblaApi.off("select", onSelect);
-    };
-  }, [emblaApi]);
-
+/**
+ * 히어로 섹션. PC/모바일 모두 동일한 구성입니다:
+ * 1) 검은 배경의 "장례, 우리는 왜 미리 준비하기 어려울까요?" 말풍선 섹션
+ * 2) 그 아래로 이어지는 정적 이미지(이미지 자체 하단에 흰색 페이드가 포함되어
+ *    있어 다음 섹션과 자연스럽게 연결됩니다)
+ * 두 영역은 이미지 상단의 검은 그라디언트로 부드럽게 이어집니다.
+ */
+export default function HeroSection() {
   return (
     <section className="relative overflow-hidden">
-      {/* 모바일: 말풍선 섹션(최상단) + 정적 이미지 */}
-      <div className="relative md:hidden">
-        {/* 상조 가입 전 흔한 불안 요소 - 말풍선 3개 */}
-        <div className="relative space-y-5 bg-black px-6 pb-10 pt-14">
-          <div className="flex justify-start">
-            <div className="relative max-w-[78%] rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white">
-              장례, 추가비용이 너무 많이 붙어요.
-              <span className="absolute -bottom-1.5 left-7 h-3 w-3 rotate-45 bg-neutral-800" />
-            </div>
-          </div>
-          <div className="flex justify-end">
-            <div className="relative max-w-[78%] rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white">
-              달마다 부담스럽게 납입금을 내야해요.
-              <span className="absolute -bottom-1.5 right-7 h-3 w-3 rotate-45 bg-neutral-800" />
-            </div>
-          </div>
-          <div className="flex justify-start">
-            <div className="relative max-w-[78%] rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white">
-              상조 가입하기에 번거로워요.
-              <span className="absolute -bottom-1.5 left-7 h-3 w-3 rotate-45 bg-neutral-800" />
-            </div>
-          </div>
-        </div>
-
-        <div className="relative aspect-[1623/2149] w-full">
-          <Image
-            src="/images/hero-mobile.jpg"
-            alt="한국장례서비스"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          {/* 이미지 상단을 위쪽 검은 말풍선 영역과 자연스럽게 이어주는 그라디언트 */}
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black to-transparent" />
-        </div>
-      </div>
-
-      {/* PC: 배너 슬라이더 */}
-      <div className="hidden md:block">
-        {/* 상단 신뢰 배지 바 */}
-        <div className="border-b border-white/10 bg-brand-950">
-          <div className="container flex h-10 items-center justify-center gap-8 text-xs text-brand-200">
-            {trustBadges.map((badge) => (
-              <span key={badge}>{badge}</span>
-            ))}
-          </div>
-        </div>
-
-        <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {slides.map((slide) => (
-            <div key={slide.id} className="relative min-w-0 flex-[0_0_100%]">
+      {/* 상조 가입 전 흔한 불안 요소 - 말풍선 3개 */}
+      <div className="relative space-y-5 bg-black px-6 pb-10 pt-14 md:pb-14 md:pt-20">
+        <div className="mx-auto max-w-2xl">
+          <h2 className="pb-1 text-center font-serif text-[2rem] font-bold leading-snug text-white md:text-4xl">
+            장례, 우리는 왜 미리 준비하기 어려울까요?
+          </h2>
+          <div className="mt-5 space-y-5 md:mx-auto md:max-w-md">
+            <div className="flex justify-start">
               <div
-                className={cn(
-                  "relative flex min-h-[520px] items-center bg-gradient-to-br bg-cover bg-center md:min-h-[600px]",
-                  !slide.imageUrl && slide.gradient
-                )}
-                style={
-                  slide.imageUrl
-                    ? { backgroundImage: `url(${slide.imageUrl})` }
-                    : undefined
-                }
+                className="relative max-w-[78%] animate-fade-in rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white [animation-duration:0.7s] [animation-fill-mode:backwards]"
+                style={{ animationDelay: "0ms" }}
               >
-                {/* 이미지 배너일 때 텍스트 가독성을 위한 어두운 오버레이 */}
-                {slide.imageUrl && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
-                )}
-                {!slide.imageUrl && (
-                  <div
-                    className="absolute inset-0 opacity-[0.06]"
-                    style={{
-                      backgroundImage:
-                        "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-                      backgroundSize: "28px 28px",
-                    }}
-                  />
-                )}
-                <div className="container relative py-20 md:py-24">
-                  <div className="max-w-xl">
-                    <span className="inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-medium tracking-wide text-white">
-                      정직하고 투명한 상조 서비스
-                    </span>
-                    <h1 className="mt-5 whitespace-pre-line font-serif text-3xl font-bold leading-tight text-white text-balance md:text-5xl">
-                      {slide.title}
-                    </h1>
-                    {slide.subtitle && (
-                      <p className="mt-5 text-base leading-relaxed text-white/80 md:text-lg">
-                        {slide.subtitle}
-                      </p>
-                    )}
-                    <div className="mt-8 flex flex-wrap gap-3">
-                      <Button asChild size="lg" variant="secondary">
-                        <Link href={slide.href}>무료 상담 신청</Link>
-                      </Button>
-                      <Button
-                        asChild
-                        size="lg"
-                        variant="outline"
-                        className="border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"
-                      >
-                        <a href={`tel:${phone}`}>
-                          <Phone className="h-4 w-4" />
-                          {phone}
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
+                장례, 추가비용이 너무 많이 붙어요.
+                <span className="absolute -bottom-1.5 left-7 h-3 w-3 rotate-45 bg-neutral-800" />
               </div>
             </div>
-          ))}
+            <div className="flex justify-end">
+              <div
+                className="relative max-w-[78%] animate-fade-in rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white [animation-duration:0.7s] [animation-fill-mode:backwards]"
+                style={{ animationDelay: "200ms" }}
+              >
+                달마다 부담스럽게 납입금을 내야해요.
+                <span className="absolute -bottom-1.5 right-7 h-3 w-3 rotate-45 bg-neutral-800" />
+              </div>
+            </div>
+            <div className="flex justify-start">
+              <div
+                className="relative max-w-[78%] animate-fade-in rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white [animation-duration:0.7s] [animation-fill-mode:backwards]"
+                style={{ animationDelay: "400ms" }}
+              >
+                상조 가입하기에 번거로워요.
+                <span className="absolute -bottom-1.5 left-7 h-3 w-3 rotate-45 bg-neutral-800" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* 좌우 화살표 */}
-      {slides.length > 1 && (
-        <>
-          <button
-            aria-label="이전 슬라이드"
-            onClick={() => emblaApi?.scrollPrev()}
-            className="absolute left-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-white/20 p-2 text-white backdrop-blur transition hover:bg-white/30 md:flex md:left-6"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            aria-label="다음 슬라이드"
-            onClick={() => emblaApi?.scrollNext()}
-            className="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-white/20 p-2 text-white backdrop-blur transition hover:bg-white/30 md:flex md:right-6"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
+      {/* 모바일 이미지 */}
+      <div className="relative aspect-[1623/2149] w-full md:hidden">
+        <Image
+          src="/images/hero-mobile.jpg"
+          alt="한국장례서비스"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black to-transparent" />
+        {/* 아래 섹션이 겹치는 지점(약 58% 지점) 전에 완전히 흰색이 되도록
+            보장하는 하단 페이드입니다. */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,transparent_20%,white_50%)]" />
+      </div>
 
-          {/* 인디케이터 */}
-          <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-2">
-            {slides.map((slide, idx) => (
-              <button
-                key={slide.id}
-                aria-label={`${idx + 1}번 슬라이드로 이동`}
-                onClick={() => emblaApi?.scrollTo(idx)}
-                className={cn(
-                  "h-1.5 rounded-full transition-all",
-                  selectedIndex === idx ? "w-6 bg-white" : "w-1.5 bg-white/40"
-                )}
-              />
-            ))}
-          </div>
-        </>
-      )}
+      {/* PC 이미지 */}
+      <div className="relative hidden aspect-[3840/1600] w-full md:block">
+        <Image
+          src="/images/hero-desktop.jpg"
+          alt="한국장례서비스"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black to-transparent" />
       </div>
     </section>
   );

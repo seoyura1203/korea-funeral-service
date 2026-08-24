@@ -106,14 +106,13 @@ export default function Header({ phone }: { phone: string }) {
         </nav>
 
         <div className="flex items-center gap-2">
-          {/* 24시간 고객센터 버튼: 모바일/PC 공통, 반응형 크기만 다름 */}
-          <button
-            type="button"
-            onClick={() => setConsultOpen(true)}
+          {/* 24시간 고객센터 버튼: 모바일/PC 공통, 반응형 크기만 다름. 전화 연결 */}
+          <a
+            href={`tel:${phone}`}
             className="animate-cta-pulse-soft rounded-full bg-[rgb(255,224,224)] px-3 py-1.5 text-xs font-bold text-red-500 transition hover:bg-red-100 md:px-5 md:py-2.5 md:text-sm"
           >
             24시간 고객센터
-          </button>
+          </a>
 
           {/* 모바일 메뉴 버튼 */}
           <button

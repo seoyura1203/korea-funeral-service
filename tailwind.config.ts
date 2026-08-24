@@ -135,6 +135,11 @@ const config: Config = {
           "0%": { backgroundPosition: "200% 0" },
           "100%": { backgroundPosition: "-200% 0" },
         },
+        "shine-sweep": {
+          "0%": { transform: "translateX(-150%) skewX(-20deg)" },
+          "60%": { transform: "translateX(150%) skewX(-20deg)" },
+          "100%": { transform: "translateX(150%) skewX(-20deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -143,6 +148,7 @@ const config: Config = {
         "cta-pulse": "cta-pulse 2s ease-in-out infinite",
         "cta-pulse-soft": "cta-pulse-soft 2.4s ease-in-out infinite",
         "text-shimmer": "text-shimmer 2.5s linear infinite",
+        "shine-sweep": "shine-sweep 2.6s ease-in-out infinite",
       },
     },
   },

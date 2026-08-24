@@ -9,15 +9,14 @@ import ServiceCards from "@/components/sections/ServiceCards";
 import HistorySection from "@/components/sections/HistorySection";
 import ReviewsPreview from "@/components/sections/ReviewsPreview";
 import EmergencyCallSection from "@/components/sections/EmergencyCallSection";
-import { getActiveBanners, getLatestReviews, getSiteSettings } from "@/lib/queries";
+import { getLatestReviews, getSiteSettings } from "@/lib/queries";
 import { siteConfig } from "@/lib/site-config";
 
-// Supabase 데이터(배너/리뷰/사이트설정)를 매 요청마다 최신으로 가져옵니다.
+// Supabase 데이터(리뷰/사이트설정)를 매 요청마다 최신으로 가져옵니다.
 export const revalidate = 0;
 
 export default async function HomePage() {
-  const [banners, reviews, settings] = await Promise.all([
-    getActiveBanners(),
+  const [reviews, settings] = await Promise.all([
     getLatestReviews(),
     getSiteSettings(),
   ]);
@@ -25,7 +24,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroSection banners={banners} phone={phone} />
+      <HeroSection />
       <FuneralInsightSection />
       <EmergencyCallSection phone={phone} />
       <HistorySection />

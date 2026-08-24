@@ -39,7 +39,7 @@ export default function EmergencyCallSection({ phone }: { phone: string }) {
   ];
 
   return (
-    <section className="section-padding bg-secondary/20">
+    <section className="section-padding bg-secondary/60">
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-12">
           {/* 좌측: 안내 콘텐츠 */}
@@ -126,7 +126,7 @@ export default function EmergencyCallSection({ phone }: { phone: string }) {
                       {r.name}
                     </span>
                   )}
-                  <span className="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
+                  <span className="relative flex h-2.5 w-2.5 shrink-0 animate-pulse items-center justify-center">
                     <span className="absolute h-2.5 w-2.5 rounded-full bg-primary/20" />
                     <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                   </span>
