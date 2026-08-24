@@ -47,9 +47,9 @@ const mubinsoCategories: ProductCategory[] = [
   {
     title: "장례식장 사용료",
     items: [
-      { name: "안치실", desc: "안치실 사용료" },
-      { name: "입관실", desc: "입관실 사용료" },
-      { name: "수시 용품", desc: "소독·소취 비용" },
+      { name: "안치실", desc: "안치실 사용료", image: "/images/products/storage-room.jpg" },
+      { name: "입관실", desc: "입관실 사용료", image: "/images/products/encoffining-room.jpg" },
+      { name: "폐기물 처리 비용", image: "/images/products/waste-disposal.jpg" },
     ],
   },
   {
@@ -71,12 +71,12 @@ const mubinsoCategories: ProductCategory[] = [
     items: [
       { name: "수의", desc: "국내산 면 100%", image: "/images/products/shroud.jpg" },
       { name: "관", desc: "오동나무 보통 또는 특관", image: "/images/products/coffin.jpg" },
-      { name: "입관용품", desc: "종교별 약 20종", image: "/images/products/embalming-supplies.jpg" },
+      { name: "입관용품", desc: "종교별 약 20종", image: "/images/products/embalming-supplies-v2.jpg" },
     ],
   },
   {
     title: "봉안함",
-    items: [{ name: "고급 목함", desc: "오동나무 목함" }],
+    items: [{ name: "고급 목함", desc: "오동나무 목함", image: "/images/products/urn-box.jpg" }],
   },
   {
     title: "차량 지원",
@@ -110,13 +110,13 @@ const generalCategories: ProductCategory[] = [
     items: [
       { name: "수의", desc: "국내산 면 100%", image: "/images/products/shroud.jpg" },
       { name: "관", desc: "오동나무 보통 또는 특관", image: "/images/products/coffin.jpg" },
-      { name: "입관용품", desc: "종교별 약 20종 (프리미엄 고인 샴푸)", image: "/images/products/embalming-supplies.jpg" },
+      { name: "입관용품", desc: "종교별 약 20종 (프리미엄 고인 샴푸)", image: "/images/products/embalming-supplies-v2.jpg" },
     ],
   },
   {
     title: "봉안함",
     items: [
-      { name: "고급 목함", desc: "오동나무 목함" },
+      { name: "고급 목함", desc: "오동나무 목함", image: "/images/products/urn-box.jpg" },
       { name: "자연장 유골함", desc: "수목함" },
     ],
   },
@@ -132,16 +132,16 @@ const generalCategories: ProductCategory[] = [
     items: [
       { name: "남상복", desc: "3벌 세트", image: "/images/products/mens-mourning-suit.jpg" },
       { name: "여상복", desc: "4벌", image: "/images/products/womens-mourning-attire.jpg" },
-      { name: "상주용품", desc: "완장·리본 등" },
+      { name: "상주용품", desc: "완장·리본 등", image: "/images/products/mourner-supplies.jpg" },
     ],
   },
   {
     title: "무료 서비스",
     items: [
-      { name: "장지 상담" },
-      { name: "고인 목욕" },
-      { name: "화장 예약" },
-      { name: "모바일 부고장" },
+      { name: "장지 상담", image: "/images/products/cemetery-consulting.jpg" },
+      { name: "고인 목욕", image: "/images/products/body-bathing.jpg" },
+      { name: "화장 예약", image: "/images/products/cremation-booking.jpg" },
+      { name: "모바일 부고장", image: "/images/products/mobile-obituary.jpg" },
     ],
   },
 ];
