@@ -14,9 +14,15 @@ type MobileNavProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   phone: string;
+  onConsultClick: () => void;
 };
 
-export default function MobileNav({ open, onOpenChange, phone }: MobileNavProps) {
+export default function MobileNav({
+  open,
+  onOpenChange,
+  phone,
+  onConsultClick,
+}: MobileNavProps) {
   const [expanded, setExpanded] = React.useState<string | null>(null);
 
   return (
@@ -76,6 +82,14 @@ export default function MobileNav({ open, onOpenChange, phone }: MobileNavProps)
                       </div>
                     )}
                   </>
+                ) : item.href === "/contact" ? (
+                  <button
+                    type="button"
+                    onClick={onConsultClick}
+                    className="block w-full px-2 py-4 text-left text-base font-medium"
+                  >
+                    {item.title}
+                  </button>
                 ) : (
                   <Link
                     href={item.href ?? "#"}
@@ -96,8 +110,8 @@ export default function MobileNav({ open, onOpenChange, phone }: MobileNavProps)
               <Phone className="h-4 w-4" />
               전화 상담 {phone}
             </a>
-            <Button asChild className="w-full" size="lg">
-              <Link href="/contact">빠른 상담신청</Link>
+            <Button className="w-full" size="lg" onClick={onConsultClick}>
+              빠른 상담신청
             </Button>
           </div>
         </Dialog.Content>

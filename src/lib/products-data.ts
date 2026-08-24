@@ -45,7 +45,7 @@ export type ProductCategory = { title: string; items: ProductItem[] };
 /** 무빈소장 포함 품목 */
 const mubinsoCategories: ProductCategory[] = [
   {
-    title: "장례식장 사용료",
+    title: "장례식장 사용 *사용료 별도 평균 50~60만원",
     items: [
       { name: "안치실", desc: "안치실 사용료", image: "/images/products/storage-room.jpg" },
       { name: "입관실", desc: "입관실 사용료", image: "/images/products/encoffining-room.jpg" },

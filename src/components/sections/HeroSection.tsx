@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -82,16 +83,56 @@ export default function HeroSection({
 
   return (
     <section className="relative overflow-hidden">
-      {/* 상단 신뢰 배지 바 */}
-      <div className="hidden border-b border-white/10 bg-brand-950 md:block">
-        <div className="container flex h-10 items-center justify-center gap-8 text-xs text-brand-200">
-          {trustBadges.map((badge) => (
-            <span key={badge}>{badge}</span>
-          ))}
+      {/* 모바일: 말풍선 섹션(최상단) + 정적 이미지 */}
+      <div className="relative md:hidden">
+        {/* 상조 가입 전 흔한 불안 요소 - 말풍선 3개 */}
+        <div className="relative space-y-5 bg-black px-6 pb-10 pt-14">
+          <div className="flex justify-start">
+            <div className="relative max-w-[78%] rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white">
+              장례, 추가비용이 너무 많이 붙어요.
+              <span className="absolute -bottom-1.5 left-7 h-3 w-3 rotate-45 bg-neutral-800" />
+            </div>
+          </div>
+          <div className="flex justify-end">
+            <div className="relative max-w-[78%] rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white">
+              달마다 부담스럽게 납입금을 내야해요.
+              <span className="absolute -bottom-1.5 right-7 h-3 w-3 rotate-45 bg-neutral-800" />
+            </div>
+          </div>
+          <div className="flex justify-start">
+            <div className="relative max-w-[78%] rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white">
+              상조 가입하기에 번거로워요.
+              <span className="absolute -bottom-1.5 left-7 h-3 w-3 rotate-45 bg-neutral-800" />
+            </div>
+          </div>
+        </div>
+
+        <div className="relative aspect-[1623/2149] w-full">
+          <Image
+            src="/images/hero-mobile.jpg"
+            alt="한국장례서비스"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* 이미지 상단을 위쪽 검은 말풍선 영역과 자연스럽게 이어주는 그라디언트 */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-black to-transparent" />
         </div>
       </div>
 
-      <div className="overflow-hidden" ref={emblaRef}>
+      {/* PC: 배너 슬라이더 */}
+      <div className="hidden md:block">
+        {/* 상단 신뢰 배지 바 */}
+        <div className="border-b border-white/10 bg-brand-950">
+          <div className="container flex h-10 items-center justify-center gap-8 text-xs text-brand-200">
+            {trustBadges.map((badge) => (
+              <span key={badge}>{badge}</span>
+            ))}
+          </div>
+        </div>
+
+        <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slides.map((slide) => (
             <div key={slide.id} className="relative min-w-0 flex-[0_0_100%]">
@@ -191,6 +232,7 @@ export default function HeroSection({
           </div>
         </>
       )}
+      </div>
     </section>
   );
 }

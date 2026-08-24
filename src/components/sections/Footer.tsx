@@ -21,7 +21,7 @@ export default async function Footer() {
               {settings.site_name}
             </div>
             {settings.site_description && (
-              <p className="mt-1 overflow-x-auto whitespace-nowrap text-xs leading-relaxed text-brand-200 sm:text-sm">
+              <p className="mt-1 text-xs leading-relaxed text-brand-200 sm:text-sm">
                 {settings.site_description}
               </p>
             )}

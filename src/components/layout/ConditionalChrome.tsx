@@ -35,7 +35,7 @@ export default function ConditionalChrome({
   return (
     <>
       <Header phone={phone} />
-      <main className="flex-1 pb-16 md:pb-0">{children}</main>
+      <main className="flex-1">{children}</main>
       {footer}
       {/* <KakaoFloatingButton /> */}
       <MobileStickyBar phone={phone} />

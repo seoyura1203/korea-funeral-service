@@ -131,7 +131,10 @@ export default function FuneralInsightSection() {
   const dashOffset = circumference * (1 - returnValue / 100);
 
   return (
-    <section ref={ref} className="bg-secondary/40 py-12 md:py-16">
+    <section
+      ref={ref}
+      className="relative z-10 -mt-[56%] bg-transparent py-12 md:mt-0 md:bg-secondary/40 md:py-16"
+    >
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-2xl font-bold leading-normal md:text-3xl">

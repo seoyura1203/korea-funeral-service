@@ -46,7 +46,7 @@ export default function EmergencyCallSection({ phone }: { phone: string }) {
           <div>
             <h2 className="font-serif text-2xl font-bold leading-snug md:text-3xl">
               막막한 순간, 한국장례서비스에 전화주세요.
-              <br />
+              <br className="hidden sm:block" />
               전국 어디든 365일 24시간, 즉시 출동합니다.
             </h2>
             <p className="mt-3 text-muted-foreground">
@@ -103,8 +103,8 @@ export default function EmergencyCallSection({ phone }: { phone: string }) {
             </div>
           </div>
 
-          {/* 우측: 전국 지도 */}
-          <div className="mx-auto w-full max-w-[380px] md:max-w-[440px]">
+          {/* 우측: 전국 지도 (모바일에서는 숨김) */}
+          <div className="mx-auto hidden w-full max-w-[380px] md:block md:max-w-[440px]">
             <div className="relative aspect-square w-full">
               <Image
                 src="/images/map/korea-map.png"

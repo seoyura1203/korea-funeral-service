@@ -113,11 +113,36 @@ const config: Config = {
           from: { opacity: "0", transform: "translateY(12px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "cta-pulse": {
+          "0%, 100%": {
+            boxShadow: "0 0 0 0 rgba(255, 120, 120, 0.55)",
+            transform: "scale(1)",
+          },
+          "50%": {
+            boxShadow: "0 0 0 10px rgba(255, 120, 120, 0)",
+            transform: "scale(1.03)",
+          },
+        },
+        "cta-pulse-soft": {
+          "0%, 100%": {
+            boxShadow: "0 0 0 0 rgba(255, 150, 150, 0.45)",
+          },
+          "50%": {
+            boxShadow: "0 0 0 6px rgba(255, 150, 150, 0)",
+          },
+        },
+        "text-shimmer": {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.6s ease-out",
+        "cta-pulse": "cta-pulse 2s ease-in-out infinite",
+        "cta-pulse-soft": "cta-pulse-soft 2.4s ease-in-out infinite",
+        "text-shimmer": "text-shimmer 2.5s linear infinite",
       },
     },
   },

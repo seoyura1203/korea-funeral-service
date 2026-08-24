@@ -1,22 +1,40 @@
 "use client";
 
+import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { history } from "@/lib/history-data";
 
+const AUTOPLAY_MS = 5000;
+
 /**
  * /about 페이지의 "연혁 및 주요 이력"을 메인 페이지에도 노출하는 섹션입니다.
  * PC(lg 이상)에서는 3장씩 보이되, 화살표를 누르면 카드 1개씩 이동하는
- * 무한 루프 슬라이더입니다.
+ * 무한 루프 슬라이더입니다. 리뷰 섹션과 동일하게 자동 재생 + 하단 페이지네이션이
+ * 함께 동작합니다.
  */
 export default function HistorySection() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: "start",
-  });
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const autoplay = React.useRef(
+    Autoplay({ delay: AUTOPLAY_MS, stopOnInteraction: false })
+  );
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [
+    autoplay.current,
+  ]);
+
+  React.useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
 
   return (
     <section className="section-padding">
@@ -24,7 +42,7 @@ export default function HistorySection() {
         <div className="flex items-end justify-between">
           <div>
             <h2 className="font-serif text-2xl font-bold md:text-3xl">
-              대한민국의 마지막 순간, 그 곁을 지켜왔습니다
+              대한민국의 마지막 순간, 그 곁을 지켜왔습니다.
             </h2>
             <p className="mt-3 text-muted-foreground">
               전직 대통령 국민장부터 국가적 추모 행사까지 — 숫자가 아닌
@@ -91,7 +109,22 @@ export default function HistorySection() {
           </button>
         </div>
 
-        <div className="mt-6 text-center sm:hidden">
+        {/* 인디케이터 */}
+        <div className="mt-6 flex items-center justify-center gap-1.5">
+          {history.map((h, idx) => (
+            <button
+              key={h.title}
+              type="button"
+              onClick={() => emblaApi?.scrollTo(idx)}
+              aria-label={`${idx + 1}번째 이력 보기`}
+              className={`h-1.5 rounded-full transition-all ${
+                idx === selectedIndex ? "w-5 bg-primary" : "w-1.5 bg-border"
+              }`}
+            />
+          ))}
+        </div>
+
+        <div className="mt-4 text-center sm:hidden">
           <Link
             href="/about"
             className="inline-flex items-center gap-1 text-sm font-medium text-primary"

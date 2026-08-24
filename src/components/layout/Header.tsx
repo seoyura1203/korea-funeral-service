@@ -8,20 +8,21 @@ import { Menu, Phone } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { mainNav } from "@/lib/site-config";
-import { Button } from "@/components/ui/button";
 import MobileNav from "@/components/layout/MobileNav";
+import ConsultationModal from "@/components/contact/ConsultationModal";
 
 export default function Header({ phone }: { phone: string }) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = React.useState(false);
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
+  const [consultOpen, setConsultOpen] = React.useState(false);
 
   React.useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
       {/* 상단 유틸리티 바 */}
       <div className="hidden border-b border-border bg-brand-900 text-brand-50 md:block">
         <div className="container flex h-9 items-center justify-end gap-6 text-xs">
@@ -54,7 +55,15 @@ export default function Header({ phone }: { phone: string }) {
               onMouseEnter={() => setOpenIndex(idx)}
               onMouseLeave={() => setOpenIndex(null)}
             >
-              {item.href ? (
+              {item.href === "/contact" ? (
+                <button
+                  type="button"
+                  onClick={() => setConsultOpen(true)}
+                  className="inline-flex h-20 items-center px-4 text-sm font-medium text-foreground transition-colors hover:text-primary"
+                >
+                  {item.title}
+                </button>
+              ) : item.href ? (
                 <Link
                   href={item.href}
                   className="inline-flex h-20 items-center px-4 text-sm font-medium text-foreground transition-colors hover:text-primary"
@@ -96,23 +105,41 @@ export default function Header({ phone }: { phone: string }) {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <Button asChild size="default">
-            <Link href="/contact">빠른 상담신청</Link>
-          </Button>
-        </div>
+        <div className="flex items-center gap-2">
+          {/* 24시간 고객센터 버튼: 모바일/PC 공통, 반응형 크기만 다름 */}
+          <button
+            type="button"
+            onClick={() => setConsultOpen(true)}
+            className="animate-cta-pulse-soft rounded-full bg-[rgb(255,224,224)] px-3 py-1.5 text-xs font-bold text-red-500 transition hover:bg-red-100 md:px-5 md:py-2.5 md:text-sm"
+          >
+            24시간 고객센터
+          </button>
 
-        {/* 모바일 메뉴 버튼 */}
-        <button
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md md:hidden"
-          onClick={() => setIsOpen(true)}
-          aria-label="메뉴 열기"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
+          {/* 모바일 메뉴 버튼 */}
+          <button
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md md:hidden"
+            onClick={() => setIsOpen(true)}
+            aria-label="메뉴 열기"
+          >
+            <Menu className="h-6 w-6" />
+          </button>
+        </div>
       </div>
 
-      <MobileNav open={isOpen} onOpenChange={setIsOpen} phone={phone} />
+      <MobileNav
+        open={isOpen}
+        onOpenChange={setIsOpen}
+        phone={phone}
+        onConsultClick={() => {
+          setIsOpen(false);
+          setConsultOpen(true);
+        }}
+      />
+      <ConsultationModal
+        phone={phone}
+        open={consultOpen}
+        onOpenChange={setConsultOpen}
+      />
     </header>
   );
 }

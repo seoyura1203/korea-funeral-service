@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
+
+import ConsultationModal from "@/components/contact/ConsultationModal";
 
 /**
  * PC 화면 하단에 고정으로 떠 있는 콜센터/상담신청 플로팅 버튼 2개.
@@ -35,22 +36,26 @@ export default function QuickContactBar({ phone }: { phone: string }) {
       <div className="mx-auto flex max-w-3xl gap-4">
         <a
           href={`tel:${phone}`}
-          className="group flex flex-1 items-center justify-between rounded-2xl bg-foreground px-6 py-4 text-white shadow-xl transition hover:opacity-90"
+          className="group flex flex-1 items-center justify-between rounded-2xl bg-[rgb(220,38,38)] px-6 py-4 text-white shadow-xl transition hover:opacity-90"
         >
-          <span className="text-base font-semibold">365일 24시 전화 상담하기</span>
+          <span className="animate-text-shimmer bg-gradient-to-r from-white/50 via-white to-white/50 bg-[length:200%_100%] bg-clip-text text-base font-bold text-transparent">
+            365일 24시 전화 상담하기
+          </span>
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 transition group-hover:bg-white/25">
             <Phone className="h-4 w-4" />
           </span>
         </a>
-        <Link
-          href="/contact"
-          className="group flex flex-1 items-center justify-between rounded-2xl bg-primary px-6 py-4 text-primary-foreground shadow-xl transition hover:bg-primary/90"
-        >
-          <span className="text-base font-semibold">무료 상담 신청</span>
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/20 transition group-hover:bg-white/30">
-            <ArrowRight className="h-4 w-4" />
-          </span>
-        </Link>
+        <ConsultationModal phone={phone}>
+          <button
+            type="button"
+            className="group flex flex-1 items-center justify-between rounded-2xl bg-[#000] px-6 py-4 text-white shadow-xl transition hover:bg-black/90"
+          >
+            <span className="text-base font-bold">무료 상담 신청</span>
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/20 transition group-hover:bg-white/30">
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </button>
+        </ConsultationModal>
       </div>
     </div>
   );
