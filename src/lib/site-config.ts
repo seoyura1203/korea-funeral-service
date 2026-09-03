@@ -3,13 +3,13 @@ export const siteConfig = {
   nameEn: "Korea Funeral Service",
   description:
     "정직과 예를 다하는 장례 상조 서비스. 24시간 전문 상담을 통해 소중한 분을 품격있게 모십니다.",
-  phone: "1588-0000",
-  email: "contact@koreafuneral.co.kr",
+  phone: "1670-1024",
+  email: "krf.care@gmail.com",
   address: "서울특별시 강남구 테헤란로 000, 0층",
   businessNumber: "000-00-00000",
   ceo: "홍길동",
   salesRegistrationNumber: "제0000-서울강남-00000호",
-  privacyOfficerEmail: "privacy@koreafuneral.co.kr",
+  privacyOfficerEmail: "krf.care@gmail.com",
   operatingHours: "24시간 연중무휴 상담",
   // 카카오톡 채널 관리자센터 > 채팅 > 채팅 플러그인에서 발급받은 채널 채팅 URL로 교체하세요.
   // 예: https://pf.kakao.com/_xxxxxxx/chat
@@ -25,9 +25,8 @@ export const trustBadges = [
 
 export const footerLinks = [
   { title: "자주 묻는 질문", href: "/support/faq" },
-  { title: "이용약관", href: "#" },
-  { title: "개인정보처리방침", href: "#" },
-  { title: "찾아오시는 길", href: "/contact" },
+  { title: "이용약관", href: "/terms" },
+  { title: "개인정보처리방침", href: "/privacy" },
 ];
 
 export type NavItem = {

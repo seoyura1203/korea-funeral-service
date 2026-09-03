@@ -15,7 +15,7 @@ export default async function Footer() {
   return (
     <footer className="border-t border-border bg-brand-950 text-brand-100">
       <div className="container !py-8 md:!py-10">
-        <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-6">
+        <div className="flex flex-col gap-3">
           <div className="min-w-0">
             <div className="font-serif text-lg font-bold text-white">
               {settings.site_name}
@@ -62,8 +62,8 @@ export default async function Footer() {
               key={link.href + idx}
               href={link.href}
               className={
-                idx === 1
-                  ? "font-semibold text-white hover:underline"
+                link.title === "개인정보처리방침"
+                  ? "text-brand-300 underline hover:text-white"
                   : "text-brand-300 hover:text-white hover:underline"
               }
             >

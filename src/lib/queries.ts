@@ -3,7 +3,6 @@ import { cache } from "react";
 import { isSupabaseConfigured, supabase } from "@/lib/supabase";
 import type {
   Banner,
-  ConsultationInsert,
   Notice,
   Review,
   SiteSettings,
@@ -146,9 +145,9 @@ const FALLBACK_SITE_SETTINGS: SiteSettings = {
   business_number: "000-00-00000",
   mos_number: "제0000-서울강남-00000호",
   address: "서울특별시 강남구 테헤란로 000, 0층",
-  phone: "1588-0000",
+  phone: "1670-1024",
   fax: null,
-  email: "contact@koreafuneral.co.kr",
+  email: "krf.care@gmail.com",
   copyright_text: "한국장례서비스. All rights reserved.",
   updated_at: new Date().toISOString(),
 };
@@ -270,34 +269,39 @@ export type CreateConsultationInput = {
 };
 
 /**
- * 상담 신청을 등록합니다. (RLS: anon 역할도 insert만 허용)
- * QuickContactBar / ContactForm 등 클라이언트 컴포넌트에서 바로 호출합니다.
+ * 상담 신청을 등록합니다.
+ * QuickContactBar / ContactForm / EstimateWizard 등 클라이언트 컴포넌트에서 바로 호출합니다.
+ *
+ * 실제 저장 및 이메일 알림 발송은 /api/consultations 라우트(서버)가 처리합니다.
+ * (이메일 알림용 API 키를 클라이언트 코드에 둘 수 없어 서버를 거치도록 변경했습니다.)
  */
 export async function createConsultation(
   input: CreateConsultationInput
 ): Promise<{ success: boolean; error?: string }> {
-  if (!isSupabaseConfigured) {
-    console.warn(
-      "[queries] Supabase 환경변수가 설정되지 않아 상담 신청이 저장되지 않았습니다."
-    );
+  try {
+    const res = await fetch("/api/consultations", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(input),
+    });
+
+    const data = (await res.json().catch(() => null)) as
+      | { success: boolean; error?: string }
+      | null;
+
+    if (!res.ok || !data?.success) {
+      return {
+        success: false,
+        error: data?.error ?? "상담 신청 접수에 실패했습니다.",
+      };
+    }
+
+    return { success: true };
+  } catch (err) {
+    console.error("[queries] createConsultation 실패:", err);
     return {
       success: false,
-      error: "Supabase 환경변수가 설정되지 않았습니다.",
+      error: "네트워크 오류로 상담 신청에 실패했습니다.",
     };
   }
-
-  const payload: ConsultationInsert = {
-    name: input.name,
-    phone: input.phone,
-    message: input.message || null,
-  };
-
-  const { error } = await supabase.from("consultations").insert(payload);
-
-  if (error) {
-    console.error("[queries] createConsultation 실패:", error.message);
-    return { success: false, error: error.message };
-  }
-
-  return { success: true };
 }

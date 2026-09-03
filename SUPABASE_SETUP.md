@@ -26,6 +26,23 @@ SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOi...
 
 `.env.local`은 `.gitignore`에 포함되어 있어 커밋되지 않습니다.
 
+### 상담 신청 이메일 알림 (선택)
+
+상담 신청이 접수될 때마다 이메일로 알림을 받고 싶다면 아래 값을 추가로 설정합니다. (안 하면 알림 없이 기존처럼 DB 저장만 됩니다.)
+
+1. https://resend.com 에서 무료로 가입합니다. (매달 3,000통까지 무료)
+2. 대시보드의 **API Keys** 메뉴에서 키를 발급받아 `RESEND_API_KEY`에 넣습니다.
+3. 알림을 받을 이메일 주소를 `NOTIFY_EMAIL`에 넣습니다. (여러 명이면 콤마로 구분)
+
+```env
+RESEND_API_KEY=re_xxxxxxxx
+NOTIFY_EMAIL=owner@example.com
+```
+
+도메인 인증을 따로 하지 않으면 발신자는 `onboarding@resend.dev`로 고정됩니다(수신에는 문제없습니다). 나중에 회사 도메인 메일(예: `no-reply@한국장례서비스도메인`)로 보내고 싶다면 Resend 대시보드에서 도메인을 인증한 뒤 `RESEND_FROM_EMAIL`을 추가로 설정하면 됩니다.
+
+배포 환경(Vercel 등)에서는 프로젝트 설정의 Environment Variables에 `RESEND_API_KEY`, `NOTIFY_EMAIL`을 동일하게 추가해야 실제로 알림이 발송됩니다.
+
 ## 3. 테이블 및 스토리지 생성 (SQL 실행)
 
 1. Supabase 대시보드 **SQL Editor**로 이동합니다.

@@ -259,8 +259,8 @@ insert into public.site_settings (
   '000-00-00000',
   '제0000-서울강남-00000호',
   '서울특별시 강남구 테헤란로 000, 0층',
-  '1588-0000',
-  'contact@koreafuneral.co.kr',
+  '1670-1024',
+  'krf.care@gmail.com',
   '한국장례서비스. All rights reserved.'
 )
 on conflict (id) do nothing;

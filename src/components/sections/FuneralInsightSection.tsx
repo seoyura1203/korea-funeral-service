@@ -137,7 +137,7 @@ export default function FuneralInsightSection() {
     >
       <div className="container">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-serif text-2xl font-bold leading-normal md:text-3xl md:leading-[2.5]">
+          <h2 className="font-serif text-2xl font-bold leading-normal md:text-3xl md:leading-[1.6]">
             그건 대부분은 비용 때문입니다.
             <br />
             <span className="relative mt-2 inline-block overflow-hidden rounded-md bg-primary px-2.5 py-1 text-white">

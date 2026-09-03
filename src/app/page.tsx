@@ -8,6 +8,7 @@ import ServiceCards from "@/components/sections/ServiceCards";
 // import NationwideServiceSection from "@/components/sections/NationwideServiceSection";
 import HistorySection from "@/components/sections/HistorySection";
 import ReviewsPreview from "@/components/sections/ReviewsPreview";
+import FaqSection from "@/components/sections/FaqSection";
 import EmergencyCallSection from "@/components/sections/EmergencyCallSection";
 import { getLatestReviews, getSiteSettings } from "@/lib/queries";
 import { siteConfig } from "@/lib/site-config";
@@ -16,8 +17,11 @@ import { siteConfig } from "@/lib/site-config";
 export const revalidate = 0;
 
 export default async function HomePage() {
+  // 고객후기 관리(어드민)에 등록된 리뷰를 최신순으로 그대로 가져옵니다.
+  // 즉 고객후기 페이지가 원본이고, 메인페이지는 그중 최신 8건을 자동으로 보여주는 구조입니다.
+  // (새 리뷰를 등록하면 별도 설정 없이 두 곳 모두에 바로 반영됩니다.)
   const [reviews, settings] = await Promise.all([
-    getLatestReviews(),
+    getLatestReviews(8),
     getSiteSettings(),
   ]);
   const phone = settings.phone || siteConfig.phone;
@@ -30,6 +34,7 @@ export default async function HomePage() {
       <HistorySection />
       <ServiceCards />
       <ReviewsPreview reviews={reviews} />
+      <FaqSection />
       <QuickContactBar phone={phone} />
     </>
   );

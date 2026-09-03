@@ -36,17 +36,20 @@ export default function ReviewsPreview({ reviews }: { reviews: Review[] }) {
   if (reviews.length === 0) return null;
 
   return (
-    <section className="section-padding bg-secondary/40">
+    <section className="section-padding bg-[#674a33]">
       <div className="container">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="font-serif text-2xl font-bold md:text-3xl">
+            <h2 className="font-serif text-2xl font-bold text-white md:text-3xl">
               고객이 남긴 이야기
             </h2>
+            <p className="mt-2 text-sm text-white/70 sm:text-base">
+              이별의 순간에도 따뜻함을 잃지 않았던 시간, 고객님들이 남긴 진심입니다.
+            </p>
           </div>
           <Link
             href="/support/reviews"
-            className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-primary"
+            className="flex items-center gap-1 text-sm font-medium text-white hover:opacity-80"
           >
             전체보기
             <ArrowRight className="h-3.5 w-3.5" />

@@ -1,6 +1,3 @@
-import type { Metadata } from "next";
-
-import PageHeader from "@/components/layout/PageHeader";
 import {
   Accordion,
   AccordionContent,
@@ -8,11 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export const metadata: Metadata = {
-  title: "자주 묻는 질문",
-  description: "한국장례서비스 상조 서비스에 대해 자주 묻는 질문을 모았습니다.",
-};
-
+// 메인페이지에는 자주 묻는 질문 중 대표 5개만 노출합니다. (전체 목록은 /support/faq)
 const faqs = [
   {
     q: "상조 상품에 미리 가입하지 않아도 이용할 수 있나요?",
@@ -36,30 +29,31 @@ const faqs = [
   },
 ];
 
-export default function FaqPage() {
+export default function FaqSection() {
   return (
-    <>
-      <PageHeader
-        eyebrow="SUPPORT"
-        title="자주 묻는 질문"
-        description="상조 서비스 이용 전 궁금하신 점을 미리 확인해 보세요."
-        breadcrumbs={[{ title: "자주 묻는 질문" }]}
-      />
-
-      <section className="section-padding">
-        <div className="container">
-          <div className="mx-auto max-w-3xl">
-            <Accordion type="single" collapsible>
-              {faqs.map((faq, idx) => (
-                <AccordionItem key={idx} value={`item-${idx}`}>
-                  <AccordionTrigger>{faq.q}</AccordionTrigger>
-                  <AccordionContent>{faq.a}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+    <section className="section-padding">
+      <div className="container">
+        <div className="md:text-center">
+          <h2 className="font-serif text-2xl font-bold md:text-3xl">
+            자주 묻는 질문
+          </h2>
         </div>
-      </section>
-    </>
+
+        <div className="mx-auto mt-8 max-w-3xl">
+          <Accordion type="single" collapsible>
+            {faqs.map((faq, idx) => (
+              <AccordionItem key={idx} value={`item-${idx}`}>
+                <AccordionTrigger className="text-[1.2rem]">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[1.05rem]">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+    </section>
   );
 }
