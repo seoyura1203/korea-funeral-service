@@ -63,7 +63,7 @@ const mubinsoCategories: ProductCategory[] = [
   {
     title: "조문 용품",
     items: [
-      { name: "빈소용품", desc: "위패·향·부의록 등", image: "/images/products/mourning-hall-supplies.jpg" },
+      { name: "빈소용품", desc: "위패,향,양초 등", image: "/images/products/mourning-hall-supplies.jpg" },
     ],
   },
   {
@@ -110,7 +110,7 @@ const generalCategories: ProductCategory[] = [
   {
     title: "조문 용품",
     items: [
-      { name: "빈소용품", desc: "위패·향·부의록 등", image: "/images/products/mourning-hall-supplies.jpg" },
+      { name: "빈소용품", desc: "위패,향,양초 등", image: "/images/products/mourning-hall-supplies.jpg" },
       { name: "헌화꽃", desc: "30송이", image: "/images/products/floral-tribute.jpg" },
     ],
   },
@@ -139,8 +139,8 @@ const generalCategories: ProductCategory[] = [
   {
     title: "유족 용품",
     items: [
-      { name: "남상복", desc: "3벌 세트", image: "/images/products/mens-mourning-suit.jpg" },
-      { name: "여상복", desc: "4벌", image: "/images/products/womens-mourning-attire.jpg" },
+      { name: "남상복", desc: "2벌", image: "/images/products/mens-mourning-suit.jpg" },
+      { name: "여상복", desc: "3벌", image: "/images/products/womens-mourning-attire.jpg" },
       { name: "상주용품", desc: "완장·리본 등", image: "/images/products/mourner-supplies.jpg" },
     ],
   },

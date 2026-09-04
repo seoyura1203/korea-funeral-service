@@ -144,7 +144,8 @@ const FALLBACK_SITE_SETTINGS: SiteSettings = {
   owner_name: "홍길동",
   business_number: "000-00-00000",
   mos_number: "제0000-서울강남-00000호",
-  address: "서울특별시 강남구 테헤란로 000, 0층",
+  address:
+    "서울지부 | 서울시 강동구 양재대로 127번길 55;본사 | 경남 창원시 의창대로 211번길 2",
   phone: "1670-1024",
   fax: null,
   email: "krf.care@gmail.com",

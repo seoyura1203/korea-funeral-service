@@ -12,6 +12,15 @@ export default async function Footer() {
   const copyrightText =
     settings.copyright_text || `${settings.company_name}. All rights reserved.`;
 
+  // 주소 필드(단일 텍스트)에 세미콜론(;)으로 구분해 여러 지점 주소를 저장하고,
+  // 각각을 별도 줄로 렌더링합니다. (예: "서울지부 | 주소 ; 본사 | 주소")
+  const addressEntries = settings.address
+    ? settings.address
+        .split(";")
+        .map((a) => a.trim())
+        .filter(Boolean)
+    : [];
+
   return (
     <footer className="border-t border-border bg-brand-950 text-brand-100">
       <div className="container !py-8 md:!py-10">
@@ -46,13 +55,18 @@ export default async function Footer() {
                 {settings.email}
               </a>
             )}
-            {settings.address && (
-              <span className="flex items-center gap-1.5 whitespace-nowrap">
-                <MapPin className="h-3.5 w-3.5 shrink-0" />
-                {settings.address}
-              </span>
-            )}
           </div>
+
+          {addressEntries.length > 0 && (
+            <div className="flex flex-col gap-1 text-xs text-brand-200 sm:text-sm">
+              {addressEntries.map((entry, idx) => (
+                <span key={idx} className="flex items-center gap-1.5">
+                  <MapPin className="h-3.5 w-3.5 shrink-0" />
+                  {entry}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* 이용약관 / 개인정보처리방침 등 */}

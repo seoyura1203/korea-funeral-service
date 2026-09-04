@@ -5,7 +5,8 @@ export const siteConfig = {
     "정직과 예를 다하는 장례 상조 서비스. 24시간 전문 상담을 통해 소중한 분을 품격있게 모십니다.",
   phone: "1670-1024",
   email: "krf.care@gmail.com",
-  address: "서울특별시 강남구 테헤란로 000, 0층",
+  address:
+    "서울지부 | 서울시 강동구 양재대로 127번길 55;본사 | 경남 창원시 의창대로 211번길 2",
   businessNumber: "000-00-00000",
   ceo: "홍길동",
   salesRegistrationNumber: "제0000-서울강남-00000호",
