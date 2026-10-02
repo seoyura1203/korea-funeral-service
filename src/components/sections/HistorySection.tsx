@@ -46,7 +46,7 @@ export default function HistorySection() {
             </h2>
             <p className="mt-3 text-muted-foreground">
               전직 대통령 국민장부터 국가적 추모 행사까지 — 숫자가 아닌
-              신뢰로 증명해온 한국장례서비스의 기록입니다.
+              신뢰로 증명해온 한국의전서비스의 기록입니다.
             </p>
           </div>
           <Link

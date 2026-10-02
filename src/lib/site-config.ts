@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "한국장례서비스",
-  nameEn: "Korea Funeral Service",
+  name: "한국의전서비스",
+  nameEn: "Korea Uijeon Service",
   description:
     "정직과 예를 다하는 장례 상조 서비스. 24시간 전문 상담을 통해 소중한 분을 품격있게 모십니다.",
   phone: "1670-1024",
@@ -45,7 +45,9 @@ export const mainNav: NavItem[] = [
     title: "장례상품",
     items: [
       { title: "무빈소", href: "/services/products/mubinso", description: "빈소 없이 진행하는 실속형 장례" },
+      { title: "가족장", href: "/services/products/family", description: "가까운 가족 중심의 실속형 3일장" },
       { title: "일반장", href: "/services/products/general", description: "빈소를 포함한 표준 3일장" },
+      { title: "VIP", href: "/services/products/vip", description: "최고급 품목으로 격식을 갖춘 프리미엄 장례" },
     ],
   },
   {

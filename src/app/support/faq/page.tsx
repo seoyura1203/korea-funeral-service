@@ -10,7 +10,7 @@ import {
 
 export const metadata: Metadata = {
   title: "자주 묻는 질문",
-  description: "한국장례서비스 상조 서비스에 대해 자주 묻는 질문을 모았습니다.",
+  description: "한국의전서비스 상조 서비스에 대해 자주 묻는 질문을 모았습니다.",
 };
 
 const faqs = [

@@ -36,10 +36,10 @@ export default function MobileNav({
           <Dialog.Title className="sr-only">모바일 메뉴</Dialog.Title>
           <div className="flex h-16 items-center justify-between border-b border-border px-5">
             <Image
-              src="/images/brand/logo.png"
-              alt="한국장례서비스"
-              width={857}
-              height={151}
+              src="/images/brand/logo.svg"
+              alt="한국의전서비스"
+              width={413}
+              height={85}
               className="h-6 w-auto"
             />
             <Dialog.Close asChild>

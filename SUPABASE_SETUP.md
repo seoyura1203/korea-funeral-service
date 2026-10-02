@@ -39,7 +39,7 @@ RESEND_API_KEY=re_xxxxxxxx
 NOTIFY_EMAIL=owner@example.com
 ```
 
-도메인 인증을 따로 하지 않으면 발신자는 `onboarding@resend.dev`로 고정됩니다(수신에는 문제없습니다). 나중에 회사 도메인 메일(예: `no-reply@한국장례서비스도메인`)로 보내고 싶다면 Resend 대시보드에서 도메인을 인증한 뒤 `RESEND_FROM_EMAIL`을 추가로 설정하면 됩니다.
+도메인 인증을 따로 하지 않으면 발신자는 `onboarding@resend.dev`로 고정됩니다(수신에는 문제없습니다). 나중에 회사 도메인 메일(예: `no-reply@한국의전서비스도메인`)로 보내고 싶다면 Resend 대시보드에서 도메인을 인증한 뒤 `RESEND_FROM_EMAIL`을 추가로 설정하면 됩니다.
 
 배포 환경(Vercel 등)에서는 프로젝트 설정의 Environment Variables에 `RESEND_API_KEY`, `NOTIFY_EMAIL`을 동일하게 추가해야 실제로 알림이 발송됩니다.
 

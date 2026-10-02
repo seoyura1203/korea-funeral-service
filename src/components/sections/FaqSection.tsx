@@ -43,10 +43,10 @@ export default function FaqSection() {
           <Accordion type="single" collapsible>
             {faqs.map((faq, idx) => (
               <AccordionItem key={idx} value={`item-${idx}`}>
-                <AccordionTrigger className="text-[1.2rem]">
+                <AccordionTrigger className="text-base md:text-[1.2rem]">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-[1.05rem]">
+                <AccordionContent className="text-base md:text-[1.05rem]">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

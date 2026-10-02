@@ -1,4 +1,4 @@
-# 한국장례서비스 웹사이트
+# 한국의전서비스 웹사이트
 
 Next.js(App Router) + TypeScript + Tailwind CSS + shadcn/ui + Supabase 기반 상조 서비스 웹사이트입니다. 공개 사이트와 `/admin` 관리자 대시보드로 구성되어 있습니다.
 

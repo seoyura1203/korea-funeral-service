@@ -5,7 +5,7 @@ import { getSiteSettings } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침",
-  description: "한국장례서비스의 개인정보 수집, 이용, 보관 및 파기에 관한 안내입니다.",
+  description: "한국의전서비스의 개인정보 수집, 이용, 보관 및 파기에 관한 안내입니다.",
 };
 
 export default async function PrivacyPage() {

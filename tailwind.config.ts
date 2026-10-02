@@ -140,6 +140,14 @@ const config: Config = {
           "60%": { transform: "translateX(150%) skewX(-20deg)" },
           "100%": { transform: "translateX(150%) skewX(-20deg)" },
         },
+        "border-fade": {
+          "0%, 100%": { opacity: "0.35" },
+          "50%": { opacity: "1" },
+        },
+        "badge-bob": {
+          "0%, 100%": { transform: "translate(-50%, 0)" },
+          "50%": { transform: "translate(-50%, -4px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -149,6 +157,8 @@ const config: Config = {
         "cta-pulse-soft": "cta-pulse-soft 2.4s ease-in-out infinite",
         "text-shimmer": "text-shimmer 2.5s linear infinite",
         "shine-sweep": "shine-sweep 2.6s ease-in-out infinite",
+        "border-fade": "border-fade 2.2s ease-in-out infinite",
+        "badge-bob": "badge-bob 1.8s ease-in-out infinite",
       },
     },
   },

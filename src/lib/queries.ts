@@ -131,16 +131,16 @@ const FALLBACK_REVIEWS: Review[] = [
 /** Supabase 미설정/조회 실패 시 사용하는 기본 사이트 설정 (site-config.ts 초기값과 동일) */
 const FALLBACK_SITE_SETTINGS: SiteSettings = {
   id: 1,
-  site_name: "한국장례서비스",
+  site_name: "한국의전서비스",
   site_description:
     "정직과 예를 다하는 장례 상조 서비스. 24시간 전문 상담을 통해 소중한 분을 품격있게 모십니다.",
-  keywords: "상조,장례,장례식장,상조회사,장례서비스,한국장례서비스",
+  keywords: "상조,장례,장례식장,상조회사,장례서비스,한국의전서비스",
   favicon_url: null,
-  og_title: "한국장례서비스",
+  og_title: "한국의전서비스",
   og_description:
     "정직과 예를 다하는 장례 상조 서비스. 24시간 전문 상담을 통해 소중한 분을 품격있게 모십니다.",
   og_image_url: null,
-  company_name: "한국장례서비스",
+  company_name: "한국의전서비스",
   owner_name: "홍길동",
   business_number: "000-00-00000",
   mos_number: "제0000-서울강남-00000호",
@@ -149,7 +149,7 @@ const FALLBACK_SITE_SETTINGS: SiteSettings = {
   phone: "1670-1024",
   fax: null,
   email: "krf.care@gmail.com",
-  copyright_text: "한국장례서비스. All rights reserved.",
+  copyright_text: "한국의전서비스. All rights reserved.",
   updated_at: new Date().toISOString(),
 };
 

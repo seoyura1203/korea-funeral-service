@@ -54,7 +54,7 @@ export default function HeroSection() {
       <div className="relative aspect-[1623/2149] w-full md:hidden">
         <Image
           src="/images/hero-mobile.jpg"
-          alt="한국장례서비스"
+          alt="한국의전서비스"
           fill
           priority
           className="object-cover"
@@ -70,7 +70,7 @@ export default function HeroSection() {
       <div className="relative hidden aspect-[3840/1600] w-full md:block">
         <Image
           src="/images/hero-desktop.jpg"
-          alt="한국장례서비스"
+          alt="한국의전서비스"
           fill
           priority
           className="object-cover"

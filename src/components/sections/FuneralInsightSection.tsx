@@ -141,7 +141,7 @@ export default function FuneralInsightSection() {
             그건 대부분은 비용 때문입니다.
             <br />
             <span className="relative mt-2 inline-block overflow-hidden rounded-md bg-primary px-2.5 py-1 text-white">
-              한국장례서비스는 월 납입금 0원
+              한국의전서비스는 월 납입금 0원
               <span
                 aria-hidden
                 className="pointer-events-none absolute inset-0 animate-shine-sweep bg-gradient-to-r from-transparent via-white/50 to-transparent"

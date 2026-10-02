@@ -8,7 +8,7 @@ import { getSiteSettings } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "상담문의",
-  description: "한국장례서비스에 상담을 신청하세요. 24시간 전문 상담사가 도와드립니다.",
+  description: "한국의전서비스에 상담을 신청하세요. 24시간 전문 상담사가 도와드립니다.",
 };
 
 export const revalidate = 0;

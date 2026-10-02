@@ -37,10 +37,10 @@ export default function Header({ phone }: { phone: string }) {
       <div className="container flex h-16 items-center justify-between md:h-20">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/brand/logo.png"
-            alt="한국장례서비스"
-            width={857}
-            height={151}
+            src="/images/brand/logo.svg"
+            alt="한국의전서비스"
+            width={413}
+            height={85}
             priority
             className="h-7 w-auto md:h-9"
           />

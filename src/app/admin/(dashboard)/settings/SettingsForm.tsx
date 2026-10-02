@@ -185,7 +185,7 @@ export default function SettingsForm({ settings }: { settings: SiteSettings }) {
               id="copyright_text"
               name="copyright_text"
               defaultValue={settings.copyright_text ?? ""}
-              placeholder="한국장례서비스. All rights reserved."
+              placeholder="한국의전서비스. All rights reserved."
             />
             <p className="text-xs text-muted-foreground">
               연도는 자동으로 앞에 붙습니다. (예: 2026 {settings.copyright_text || "..."})

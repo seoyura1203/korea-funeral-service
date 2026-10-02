@@ -4,17 +4,14 @@ import * as React from "react";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { ArrowRight, ChevronLeft, ChevronRight, ImageIcon, Star } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 import { formatDate } from "@/lib/format";
 import type { Review } from "@/types/supabase";
-import ImageLightbox from "@/components/reviews/ImageLightbox";
 
 const AUTOPLAY_MS = 5000;
 
 export default function ReviewsPreview({ reviews }: { reviews: Review[] }) {
-  const [lightboxSrc, setLightboxSrc] = React.useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const autoplay = React.useRef(
     Autoplay({ delay: AUTOPLAY_MS, stopOnInteraction: false })
@@ -87,24 +84,6 @@ export default function ReviewsPreview({ reviews }: { reviews: Review[] }) {
                     <p className="mt-3 text-xs font-medium text-muted-foreground">
                       {r.name} | {formatDate(r.review_date)}
                     </p>
-                    <div
-                      onClick={() => r.image_url && setLightboxSrc(r.image_url)}
-                      className={cn(
-                        "mt-3 flex aspect-square w-full items-center justify-center overflow-hidden rounded-md bg-muted/50",
-                        r.image_url && "cursor-pointer"
-                      )}
-                    >
-                      {r.image_url ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={r.image_url}
-                          alt=""
-                          className="h-full w-full object-cover transition-transform hover:scale-105"
-                        />
-                      ) : (
-                        <ImageIcon className="h-4 w-4 text-muted-foreground/30" />
-                      )}
-                    </div>
                   </div>
                 </div>
               ))}
@@ -130,15 +109,13 @@ export default function ReviewsPreview({ reviews }: { reviews: Review[] }) {
               type="button"
               onClick={() => emblaApi?.scrollTo(idx)}
               aria-label={`${idx + 1}번째 후기 보기`}
-              className={`h-1.5 rounded-full transition-all ${
-                idx === selectedIndex ? "w-5 bg-primary" : "w-1.5 bg-border"
+              className={`h-1.5 rounded-full bg-white transition-all ${
+                idx === selectedIndex ? "w-5 opacity-100" : "w-1.5 opacity-40"
               }`}
             />
           ))}
         </div>
       </div>
-
-      <ImageLightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
     </section>
   );
 }

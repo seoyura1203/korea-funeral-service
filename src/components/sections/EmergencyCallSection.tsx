@@ -45,7 +45,7 @@ export default function EmergencyCallSection({ phone }: { phone: string }) {
           {/* 좌측: 안내 콘텐츠 */}
           <div>
             <h2 className="font-serif text-2xl font-bold leading-snug md:text-3xl">
-              막막한 순간, 한국장례서비스에 전화주세요.
+              막막한 순간, 한국의전서비스에 전화주세요.
               <br className="hidden sm:block" />
               전국 어디든 365일 24시간, 즉시 출동합니다.
             </h2>

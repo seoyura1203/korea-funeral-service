@@ -46,7 +46,7 @@ export default async function AdminOverviewPage() {
     <div>
       <h1 className="font-serif text-2xl font-bold">대시보드</h1>
       <p className="mt-1 text-sm text-muted-foreground">
-        한국장례서비스 홈페이지 콘텐츠를 관리합니다.
+        한국의전서비스 홈페이지 콘텐츠를 관리합니다.
       </p>
 
       <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">

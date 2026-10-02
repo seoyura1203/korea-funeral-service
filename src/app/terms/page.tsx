@@ -5,7 +5,7 @@ import { getSiteSettings } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "이용약관",
-  description: "한국장례서비스 웹사이트 및 서비스 이용약관입니다.",
+  description: "한국의전서비스 웹사이트 및 서비스 이용약관입니다.",
 };
 
 export default async function TermsPage() {

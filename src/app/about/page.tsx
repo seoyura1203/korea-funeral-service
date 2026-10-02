@@ -15,7 +15,7 @@ import { history } from "@/lib/history-data";
 export const metadata: Metadata = {
   title: "회사소개",
   description:
-    "한국장례서비스의 인사말, 경영철학, 주요 연혁을 소개합니다.",
+    "한국의전서비스의 인사말, 경영철학, 주요 연혁을 소개합니다.",
 };
 
 const values = [
@@ -47,7 +47,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="ABOUT"
         title="회사소개"
-        description="한국장례서비스가 걸어온 길, 지키는 원칙, 그리고 함께한 순간들을 소개합니다."
+        description="한국의전서비스가 걸어온 길, 지키는 원칙, 그리고 함께한 순간들을 소개합니다."
         breadcrumbs={[{ title: "회사소개" }]}
       />
 
@@ -61,7 +61,7 @@ export default function AboutPage() {
             <div className="mt-6 space-y-6 leading-loose text-foreground/90">
               <p>
                 소중한 분을 떠나보내는 마지막 순간, 그 어느 때보다 신중하고
-                세심한 손길이 필요합니다. 한국장례서비스는 그 순간을 함께하는
+                세심한 손길이 필요합니다. 한국의전서비스는 그 순간을 함께하는
                 동반자로서, 예를 다하는 장례 문화를 만들어가고자 합니다.
               </p>
               <p>
@@ -73,12 +73,12 @@ export default function AboutPage() {
               </p>
               <p>
                 장례는 단순한 절차가 아니라, 고인의 삶을 기리고 남은 이들이
-                위로받는 시간이라고 믿습니다. 한국장례서비스는 그 믿음을
+                위로받는 시간이라고 믿습니다. 한국의전서비스는 그 믿음을
                 바탕으로 앞으로도 신뢰받는 상조 서비스가 되기 위해 최선을
                 다하겠습니다.
               </p>
               <p className="pt-2 text-right font-serif text-lg font-semibold">
-                한국장례서비스 임직원 일동
+                한국의전서비스 임직원 일동
               </p>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
               경영철학
             </h2>
             <p className="mt-3 text-muted-foreground">
-              한국장례서비스는 다음 네 가지 원칙을 바탕으로 서비스를
+              한국의전서비스는 다음 네 가지 원칙을 바탕으로 서비스를
               제공합니다.
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
               &ldquo;마지막까지 예를 다하는 것이 진정한 위로입니다&rdquo;
             </p>
             <p className="mt-3 text-sm text-muted-foreground">
-              한국장례서비스 경영 원칙
+              한국의전서비스 경영 원칙
             </p>
           </div>
         </div>

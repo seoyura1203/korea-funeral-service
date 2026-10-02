@@ -27,7 +27,7 @@ export async function notifyNewConsultation(input: NotifyInput): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.NOTIFY_EMAIL;
   const from =
-    process.env.RESEND_FROM_EMAIL || "한국장례서비스 알림 <onboarding@resend.dev>";
+    process.env.RESEND_FROM_EMAIL || "한국의전서비스 알림 <onboarding@resend.dev>";
 
   if (!apiKey || !to) {
     console.warn(
@@ -81,7 +81,7 @@ export async function notifyNewConsultation(input: NotifyInput): Promise<void> {
     body: JSON.stringify({
       from,
       to: to.split(",").map((v) => v.trim()).filter(Boolean),
-      subject: `[한국장례서비스] 새 상담 신청 - ${input.name}`,
+      subject: `[한국의전서비스] 새 상담 신청 - ${input.name}`,
       html,
     }),
   });

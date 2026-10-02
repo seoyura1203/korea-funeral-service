@@ -1,5 +1,5 @@
 -- ============================================================================
--- 한국장례서비스 Supabase 스키마
+-- 한국의전서비스 Supabase 스키마
 -- Supabase 대시보드 > SQL Editor 에서 그대로 실행하면 됩니다.
 -- ============================================================================
 
@@ -189,7 +189,7 @@ create table if not exists public.site_settings (
   id                  smallint primary key default 1 check (id = 1),
 
   -- SEO / 메타데이터
-  site_name           text not null default '한국장례서비스',
+  site_name           text not null default '한국의전서비스',
   site_description    text,
   keywords            text, -- 쉼표(,)로 구분된 키워드 문자열
 
@@ -200,7 +200,7 @@ create table if not exists public.site_settings (
   og_image_url        text,
 
   -- 회사/사업자 정보 (푸터 및 통신판매업 고지에 사용)
-  company_name        text not null default '한국장례서비스',
+  company_name        text not null default '한국의전서비스',
   owner_name          text,
   business_number     text,
   mos_number          text, -- 통신판매업신고번호
@@ -249,19 +249,19 @@ insert into public.site_settings (
   address, phone, email, copyright_text
 ) values (
   1,
-  '한국장례서비스',
+  '한국의전서비스',
   '정직과 예를 다하는 장례 상조 서비스. 24시간 전문 상담을 통해 소중한 분을 품격있게 모십니다.',
-  '상조,장례,장례식장,상조회사,장례서비스,한국장례서비스',
-  '한국장례서비스',
+  '상조,장례,장례식장,상조회사,장례서비스,한국의전서비스',
+  '한국의전서비스',
   '정직과 예를 다하는 장례 상조 서비스. 24시간 전문 상담을 통해 소중한 분을 품격있게 모십니다.',
-  '한국장례서비스',
+  '한국의전서비스',
   '홍길동',
   '000-00-00000',
   '제0000-서울강남-00000호',
   '서울지부 | 서울시 강동구 양재대로 127번길 55;본사 | 경남 창원시 의창대로 211번길 2',
   '1670-1024',
   'krf.care@gmail.com',
-  '한국장례서비스. All rights reserved.'
+  '한국의전서비스. All rights reserved.'
 )
 on conflict (id) do nothing;
 
