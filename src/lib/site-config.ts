@@ -14,7 +14,7 @@ export const siteConfig = {
   operatingHours: "24시간 연중무휴 상담",
   // 카카오톡 채널 관리자센터 > 채팅 > 채팅 플러그인에서 발급받은 채널 채팅 URL로 교체하세요.
   // 예: https://pf.kakao.com/_xxxxxxx/chat
-  kakaoChannelUrl: "https://pf.kakao.com/_xxxxxxx/chat",
+  kakaoChannelUrl: "https://open.kakao.com/o/sthzZqQi",
 };
 
 export const trustBadges = [
