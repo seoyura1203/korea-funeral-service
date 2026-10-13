@@ -6,7 +6,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
-import { formatDate } from "@/lib/format";
 import type { Review } from "@/types/supabase";
 
 const AUTOPLAY_MS = 5000;
@@ -82,7 +81,7 @@ export default function ReviewsPreview({ reviews }: { reviews: Review[] }) {
                       &ldquo;{r.content}&rdquo;
                     </p>
                     <p className="mt-3 text-xs font-medium text-muted-foreground">
-                      {r.name} | {formatDate(r.review_date)}
+                      {r.name}
                     </p>
                   </div>
                 </div>

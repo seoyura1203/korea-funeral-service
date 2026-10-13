@@ -1,6 +1,5 @@
 import { Star } from "lucide-react";
 
-import { formatDate } from "@/lib/format";
 import type { Review } from "@/types/supabase";
 
 export default function ReviewsGrid({ reviews }: { reviews: Review[] }) {
@@ -20,7 +19,7 @@ export default function ReviewsGrid({ reviews }: { reviews: Review[] }) {
             &ldquo;{r.content}&rdquo;
           </p>
           <p className="mt-3 text-xs font-medium text-muted-foreground">
-            {r.name} | {formatDate(r.review_date)}
+            {r.name}
           </p>
         </div>
       ))}
