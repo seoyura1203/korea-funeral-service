@@ -200,6 +200,8 @@ export default function ServiceCards() {
         <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-muted-foreground">
           * 표시된 금액은 기본 구성 기준이며, 지역·장례식장 사정에 따라 달라질 수 있습니다.
           <br />
+          * 불필요한 품목은 빼서 더 저렴하게 상품을 구성할 수 있습니다.
+          <br />
           정확한 견적은 상담을 통해 안내해 드립니다.
         </p>
       </div>

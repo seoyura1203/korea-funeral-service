@@ -5,7 +5,7 @@ import ProductPlanDetail from "@/components/products/ProductPlanDetail";
 
 export const metadata: Metadata = {
   title: "VIP",
-  description: "최고급 품목과 인력으로 격식을 갖춘 VIP 장례 상품, 350만원 안내.",
+  description: "최고급 품목과 인력으로 격식을 갖춘 VIP 장례 상품, 400만원 안내.",
 };
 
 export default function VipProductPage() {

@@ -6,7 +6,7 @@ import ProductPlanDetail from "@/components/products/ProductPlanDetail";
 export const metadata: Metadata = {
   title: "무빈소",
   description:
-    "빈소(장례식장) 없이 진행하는 실속형 장례 상품, 무빈소장 200만원 안내.",
+    "빈소(장례식장) 없이 진행하는 실속형 장례 상품, 무빈소장 180만원 안내.",
 };
 
 export default function MubinsoProductPage() {

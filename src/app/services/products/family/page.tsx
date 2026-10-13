@@ -5,7 +5,7 @@ import ProductPlanDetail from "@/components/products/ProductPlanDetail";
 
 export const metadata: Metadata = {
   title: "가족장",
-  description: "가까운 가족 중심의 실속형 3일장, 가족장 230만원 안내.",
+  description: "가까운 가족 중심의 실속형 3일장, 가족장 250만원 안내.",
 };
 
 export default function FamilyProductPage() {

@@ -20,7 +20,7 @@ export const productPlans: ProductPlan[] = [
   {
     id: "mubinso",
     name: "무빈소장",
-    price: 2_000_000,
+    price: 1_800_000,
     points: [
       "빈소 임차료 부담 없이 핵심 절차만 알차게",
       "화장 중심의 간소한 장례를 원하는 가족께 적합",
@@ -29,7 +29,7 @@ export const productPlans: ProductPlan[] = [
   {
     id: "family",
     name: "가족장",
-    price: 2_300_000,
+    price: 2_500_000,
     points: [
       "가까운 가족 중심의 조용하고 정갈한 장례",
       "실속 있는 구성으로 부담은 줄이고 예는 다하는 선택",
@@ -39,7 +39,7 @@ export const productPlans: ProductPlan[] = [
   {
     id: "general",
     name: "일반장",
-    price: 2_500_000,
+    price: 2_800_000,
     points: [
       "빈소 마련부터 발인까지 3일장 표준 절차",
       "조문객 접객까지 폭넓게 지원",
@@ -50,7 +50,7 @@ export const productPlans: ProductPlan[] = [
   {
     id: "vip",
     name: "VIP",
-    price: 3_500_000,
+    price: 4_000_000,
     points: [
       "최고급 품목과 넉넉한 인력 지원으로 격식을 갖춘 장례",
       "거리 제한 없는 프리미엄 차량 지원",
@@ -78,12 +78,6 @@ const mubinsoCategories: ProductCategory[] = [
       { name: "장례지도사", desc: "1명 · 전반 1:1 케어", image: "/images/products/funeral-director.jpg" },
       { name: "입관지도사", desc: "1명 · 2인1조 입관", image: "/images/products/embalming-director.jpg" },
       { name: "운구인력", desc: "2명 (팀장+기사)", image: "/images/products/transport-crew.jpg" },
-    ],
-  },
-  {
-    title: "조문 용품",
-    items: [
-      { name: "빈소용품", desc: "위패,향,양초 등", image: "/images/products/mourning-hall-supplies.jpg" },
     ],
   },
   {
@@ -123,7 +117,7 @@ const generalCategories: ProductCategory[] = [
     items: [
       { name: "장례지도사", desc: "1명 · 전반 1:1 케어", image: "/images/products/funeral-director.jpg" },
       { name: "입관지도사", desc: "1명 · 2인1조 입관", image: "/images/products/embalming-director.jpg" },
-      { name: "접객관리사", desc: "4명 · 1인 최대 10시간 (밤 10시 종료)", image: "/images/products/hospitality-staff.jpg" },
+      { name: "접객관리사", desc: "3명 · 1인 최대 10시간 (밤 10시 종료)", image: "/images/products/hospitality-staff.jpg" },
       { name: "운구인력", desc: "2명 (팀장+기사 1명)", image: "/images/products/transport-crew.jpg" },
     ],
   },
@@ -148,7 +142,7 @@ const generalCategories: ProductCategory[] = [
       { name: "고급 목함", desc: "오동나무 목함", image: "/images/products/urn-box.jpg" },
       {
         name: "자연장 유골함",
-        desc: "수목함",
+        desc: "수목함 · 별도문의",
         image: "/images/products/natural-burial-urn.jpg",
       },
     ],
@@ -163,8 +157,6 @@ const generalCategories: ProductCategory[] = [
   {
     title: "유족 용품",
     items: [
-      { name: "남상복", desc: "2벌", image: "/images/products/mens-mourning-suit.jpg" },
-      { name: "여상복", desc: "3벌", image: "/images/products/womens-mourning-attire.jpg" },
       { name: "상주용품", desc: "완장·리본 등", image: "/images/products/mourner-supplies.jpg" },
     ],
   },
@@ -193,7 +185,7 @@ const familyCategories: ProductCategory[] = [
   {
     title: "조문 용품",
     items: [
-      { name: "빈소용품", desc: "영정액자, 향·초·위패·방명록 일체", image: "/images/products/mourning-hall-supplies.jpg" },
+      { name: "빈소용품", desc: "향·초·위패·방명록 일체", image: "/images/products/mourning-hall-supplies.jpg" },
     ],
   },
   {
@@ -210,7 +202,7 @@ const familyCategories: ProductCategory[] = [
       { name: "고급 목함", desc: "오동나무 목함", image: "/images/products/urn-box.jpg" },
       {
         name: "자연장 유골함",
-        desc: "수목함",
+        desc: "수목함 · 별도문의",
         image: "/images/products/natural-burial-urn.jpg",
       },
     ],
@@ -225,8 +217,6 @@ const familyCategories: ProductCategory[] = [
   {
     title: "유족 용품",
     items: [
-      { name: "남상복", desc: "3벌", image: "/images/products/mens-mourning-suit.jpg" },
-      { name: "여상복", desc: "3벌", image: "/images/products/womens-mourning-attire.jpg" },
       { name: "상주용품", desc: "완장·리본 등", image: "/images/products/mourner-supplies.jpg" },
     ],
   },
@@ -248,7 +238,7 @@ const vipCategories: ProductCategory[] = [
     items: [
       { name: "장례지도사", desc: "1명 · 전반 1:1 케어", image: "/images/products/funeral-director.jpg" },
       { name: "입관지도사", desc: "1명 · 2인1조 입관", image: "/images/products/embalming-director.jpg" },
-      { name: "의전도우미", desc: "6명", image: "/images/products/hospitality-staff.jpg" },
+      { name: "의전도우미", desc: "4명", image: "/images/products/hospitality-staff.jpg" },
       { name: "운구인력", desc: "2명 (팀장+기사 1명)", image: "/images/products/transport-crew.jpg" },
     ],
   },
@@ -273,7 +263,7 @@ const vipCategories: ProductCategory[] = [
       { name: "고급 목함", desc: "오동나무 목함", image: "/images/products/urn-box.jpg" },
       {
         name: "자연장 유골함",
-        desc: "수목함",
+        desc: "수목함 · 별도문의",
         image: "/images/products/natural-burial-urn.jpg",
       },
     ],
@@ -288,8 +278,6 @@ const vipCategories: ProductCategory[] = [
   {
     title: "유족 용품",
     items: [
-      { name: "남상복", desc: "7벌", image: "/images/products/mens-mourning-suit.jpg" },
-      { name: "여상복", desc: "7벌", image: "/images/products/womens-mourning-attire.jpg" },
       { name: "상주용품", desc: "완장·리본 등", image: "/images/products/mourner-supplies.jpg" },
     ],
   },
@@ -317,30 +305,26 @@ export type PlanSummaryRow = { label: string; value: string; sub?: string };
 export const planSummaryRows: Record<ProductPlanId, PlanSummaryRow[]> = {
   mubinso: [
     { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명" },
-    { label: "차량 지원", value: "미제공" },
+    { label: "차량 지원", value: "리무진" },
     { label: "입관 용품", value: "규격관, 일반 수의", sub: "생화 꽃장식, 결속용품" },
-    { label: "상복 지원", value: "없음" },
     { label: "빈소 용품", value: "영정용 소품" },
   ],
   family: [
     { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 2명" },
     { label: "차량 지원", value: "리무진 또는 대형버스 (택1)", sub: "왕복 200km" },
     { label: "입관 용품", value: "오동나무 규격관, 인견 수의", sub: "생화 꽃장식, 입관용품" },
-    { label: "상복 지원", value: "남성 3벌 · 여성 3벌" },
-    { label: "빈소 용품", value: "영정액자", sub: "향·초·위패·방명록 일체" },
+    { label: "빈소 용품", value: "향·초·위패·방명록 일체" },
   ],
   general: [
-    { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 4명" },
+    { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 3명" },
     { label: "차량 지원", value: "리무진 + 대형버스 2종 제공", sub: "왕복 200km" },
     { label: "입관 용품", value: "오동나무 특관, 삼베 고급 수의", sub: "생화 꽃장식, 입관용품" },
-    { label: "상복 지원", value: "남성 5벌 · 여성 5벌" },
     { label: "빈소 용품", value: "표준 빈소용품 일체", sub: "헌화 국화 30송이" },
   ],
   vip: [
-    { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 6명" },
+    { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 4명" },
     { label: "차량 지원", value: "최고급 리무진 + 우등 대형버스", sub: "거리무제한 · 장거리" },
     { label: "입관 용품", value: "오동나무 특관, 최고급 대마수의", sub: "고급 생화 꽃장식, 고급용품" },
-    { label: "상복 지원", value: "남성 7벌 · 여성 7벌" },
     { label: "빈소 용품", value: "고급 빈소용품 일체", sub: "헌화 국화 30송이" },
   ],
 };
