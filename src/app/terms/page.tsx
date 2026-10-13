@@ -129,12 +129,6 @@ export default async function TermsPage() {
                 {settings.email && <> | {settings.email}</>}
               </p>
             </div>
-
-            <p className="border-t border-border pt-4 text-xs text-muted-foreground">
-              ※ 본 약관은 일반적인 웹사이트 이용약관 양식을 바탕으로 작성된 예시이며, 실제 서비스
-              운영 형태와 관련 법령(전자상거래법, 선불식 할부거래에 관한 법률 등)에 맞게 전문가의
-              검토를 거쳐 확정하시는 것을 권장합니다.
-            </p>
           </div>
         </div>
       </section>

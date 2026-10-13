@@ -119,12 +119,6 @@ export default async function PrivacyPage() {
                 {settings.email && <>{settings.email}</>}
               </p>
             </div>
-
-            <p className="border-t border-border pt-4 text-xs text-muted-foreground">
-              ※ 본 개인정보처리방침은 일반적인 양식을 바탕으로 작성된 예시이며, 실제 수집·처리하는
-              개인정보 항목 및 위탁·제공 현황에 맞게 개인정보보호법 등 관련 법령 검토를 거쳐
-              확정하시는 것을 권장합니다.
-            </p>
           </div>
         </div>
       </section>
