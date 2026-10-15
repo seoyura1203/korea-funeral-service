@@ -138,7 +138,7 @@ const generalCategories: ProductCategory[] = [
   {
     title: "차량 지원",
     items: [
-      { name: "장의차량", desc: "리무진 또는 대형버스 (택1) · 왕복 200km", image: "/images/products/hearse.jpg" },
+      { name: "장의차량", desc: "리무진 또는 대형버스 (택1) · 관내제공", image: "/images/products/hearse.jpg" },
       { name: "긴급 이송차량", desc: "시내(관내) 제공", image: "/images/products/emergency-vehicle.jpg" },
     ],
   },
@@ -254,7 +254,7 @@ const vipCategories: ProductCategory[] = [
   {
     title: "차량 지원",
     items: [
-      { name: "장의차량", desc: "최고급 리무진 + 우등 대형버스 · 거리무제한", image: "/images/products/hearse.jpg" },
+      { name: "장의차량", desc: "최고급 리무진 + 우등 대형버스", image: "/images/products/hearse.jpg" },
       { name: "긴급 이송차량", desc: "시내(관내) 제공", image: "/images/products/emergency-vehicle.jpg" },
     ],
   },
@@ -300,7 +300,7 @@ export const planSummaryRows: Record<ProductPlanId, PlanSummaryRow[]> = {
   ],
   general: [
     { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 3명 (1인 8시간)" },
-    { label: "차량 지원", value: "리무진 또는 대형버스 (택1)", sub: "왕복 200km" },
+    { label: "차량 지원", value: "리무진 또는 대형버스 (택1)", sub: "관내제공" },
     { label: "입관 용품", value: "오동나무 특관, 삼베 고급 수의", sub: "생화 꽃장식, 입관용품" },
     { label: "빈소 용품", value: "표준 빈소용품 일체", sub: "헌화 국화 30송이" },
   ],
