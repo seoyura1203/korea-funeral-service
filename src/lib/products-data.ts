@@ -93,6 +93,12 @@ const mubinsoCategories: ProductCategory[] = [
     items: [{ name: "고급 목함", desc: "오동나무 목함", image: "/images/products/urn-box.jpg" }],
   },
   {
+    title: "차량 지원",
+    items: [
+      { name: "장의차량", desc: "리무진", image: "/images/products/hearse-limo.jpg" },
+    ],
+  },
+  {
     title: "무료 서비스",
     items: [
       { name: "장지 상담", image: "/images/products/cemetery-consulting.jpg" },
