@@ -20,7 +20,7 @@ export const productPlans: ProductPlan[] = [
   {
     id: "mubinso",
     name: "무빈소장",
-    price: 1_800_000,
+    price: 990_000,
     points: [
       "빈소 임차료 부담 없이 핵심 절차만 알차게",
       "화장 중심의 간소한 장례를 원하는 가족께 적합",
@@ -93,13 +93,6 @@ const mubinsoCategories: ProductCategory[] = [
     items: [{ name: "고급 목함", desc: "오동나무 목함", image: "/images/products/urn-box.jpg" }],
   },
   {
-    title: "차량 지원",
-    items: [
-      { name: "장의차량", desc: "리무진 또는 버스 (택1) · 관내 무료", image: "/images/products/hearse.jpg" },
-      { name: "긴급 이송차량", desc: "시내(관내) 제공", image: "/images/products/emergency-vehicle.jpg" },
-    ],
-  },
-  {
     title: "무료 서비스",
     items: [
       { name: "장지 상담", image: "/images/products/cemetery-consulting.jpg" },
@@ -140,11 +133,6 @@ const generalCategories: ProductCategory[] = [
     title: "봉안함",
     items: [
       { name: "고급 목함", desc: "오동나무 목함", image: "/images/products/urn-box.jpg" },
-      {
-        name: "자연장 유골함",
-        desc: "수목함 · 별도문의",
-        image: "/images/products/natural-burial-urn.jpg",
-      },
     ],
   },
   {
@@ -200,17 +188,12 @@ const familyCategories: ProductCategory[] = [
     title: "봉안함",
     items: [
       { name: "고급 목함", desc: "오동나무 목함", image: "/images/products/urn-box.jpg" },
-      {
-        name: "자연장 유골함",
-        desc: "수목함 · 별도문의",
-        image: "/images/products/natural-burial-urn.jpg",
-      },
     ],
   },
   {
     title: "차량 지원",
     items: [
-      { name: "장의차량", desc: "리무진 또는 대형버스 (택1) · 왕복 200km", image: "/images/products/hearse.jpg" },
+      { name: "장의차량", desc: "리무진 또는 대형버스 (택1) · 관내제공", image: "/images/products/hearse.jpg" },
       { name: "긴급 이송차량", desc: "시내(관내) 제공", image: "/images/products/emergency-vehicle.jpg" },
     ],
   },
@@ -263,7 +246,7 @@ const vipCategories: ProductCategory[] = [
       { name: "고급 목함", desc: "오동나무 목함", image: "/images/products/urn-box.jpg" },
       {
         name: "자연장 유골함",
-        desc: "수목함 · 별도문의",
+        desc: "수목함",
         image: "/images/products/natural-burial-urn.jpg",
       },
     ],
@@ -306,24 +289,24 @@ export const planSummaryRows: Record<ProductPlanId, PlanSummaryRow[]> = {
   mubinso: [
     { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명" },
     { label: "차량 지원", value: "리무진" },
-    { label: "입관 용품", value: "규격관, 일반 수의", sub: "생화 꽃장식, 결속용품" },
+    { label: "입관 용품", value: "규격관, 일반 수의", sub: "결속용품" },
     { label: "빈소 용품", value: "영정용 소품" },
   ],
   family: [
-    { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 2명" },
-    { label: "차량 지원", value: "리무진 또는 대형버스 (택1)", sub: "왕복 200km" },
+    { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 2명 (1인 8시간)" },
+    { label: "차량 지원", value: "리무진 또는 대형버스 (택1)", sub: "관내제공" },
     { label: "입관 용품", value: "오동나무 규격관, 인견 수의", sub: "생화 꽃장식, 입관용품" },
     { label: "빈소 용품", value: "향·초·위패·방명록 일체" },
   ],
   general: [
-    { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 3명" },
+    { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 3명 (1인 8시간)" },
     { label: "차량 지원", value: "리무진 또는 대형버스 (택1)", sub: "왕복 200km" },
     { label: "입관 용품", value: "오동나무 특관, 삼베 고급 수의", sub: "생화 꽃장식, 입관용품" },
     { label: "빈소 용품", value: "표준 빈소용품 일체", sub: "헌화 국화 30송이" },
   ],
   vip: [
-    { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 4명" },
-    { label: "차량 지원", value: "최고급 리무진 + 우등 대형버스", sub: "거리무제한 · 장거리" },
+    { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 4명 (1인 8시간)" },
+    { label: "차량 지원", value: "최고급 리무진 + 우등 대형버스" },
     { label: "입관 용품", value: "오동나무 특관, 최고급 대마수의", sub: "고급 생화 꽃장식, 고급용품" },
     { label: "빈소 용품", value: "고급 빈소용품 일체", sub: "헌화 국화 30송이" },
   ],
