@@ -138,7 +138,7 @@ const generalCategories: ProductCategory[] = [
   {
     title: "차량 지원",
     items: [
-      { name: "장의차량", desc: "리무진 또는 대형버스 (택1) · 관내제공", image: "/images/products/hearse.jpg" },
+      { name: "장의차량", desc: "리무진 또는 대형버스 (택1) · 관내제공", image: "/images/products/hearse-limo-bus.jpg" },
       { name: "긴급 이송차량", desc: "시내(관내) 제공", image: "/images/products/emergency-vehicle.jpg" },
     ],
   },
@@ -193,7 +193,7 @@ const familyCategories: ProductCategory[] = [
   {
     title: "차량 지원",
     items: [
-      { name: "장의차량", desc: "리무진 또는 대형버스 (택1) · 관내제공", image: "/images/products/hearse.jpg" },
+      { name: "장의차량", desc: "리무진 또는 대형버스 (택1) · 관내제공", image: "/images/products/hearse-limo-bus.jpg" },
       { name: "긴급 이송차량", desc: "시내(관내) 제공", image: "/images/products/emergency-vehicle.jpg" },
     ],
   },
@@ -254,7 +254,7 @@ const vipCategories: ProductCategory[] = [
   {
     title: "차량 지원",
     items: [
-      { name: "장의차량", desc: "최고급 리무진 + 우등 대형버스", image: "/images/products/hearse.jpg" },
+      { name: "장의차량", desc: "최고급 리무진 + 우등 대형버스", image: "/images/products/hearse-limo-bus.jpg" },
       { name: "긴급 이송차량", desc: "시내(관내) 제공", image: "/images/products/emergency-vehicle.jpg" },
     ],
   },
