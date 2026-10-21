@@ -50,10 +50,10 @@ export const productPlans: ProductPlan[] = [
   {
     id: "vip",
     name: "VIP",
-    price: 4_000_000,
+    price: 4_500_000,
     points: [
       "최고급 품목과 넉넉한 인력 지원으로 격식을 갖춘 장례",
-      "거리 제한 없는 프리미엄 차량 지원",
+      "최고급 리무진과 우등 대형버스 차량 지원 (관내제공)",
       "많은 조문객을 모시는 가족에게 적합",
     ],
   },
@@ -83,7 +83,7 @@ const mubinsoCategories: ProductCategory[] = [
   {
     title: "고인 용품",
     items: [
-      { name: "수의", desc: "국내산 면 100%", image: "/images/products/shroud.jpg" },
+      { name: "수의", desc: "고급수의(한국1호)", image: "/images/products/shroud.jpg" },
       { name: "관", desc: "오동나무 보통 또는 특관", image: "/images/products/coffin.jpg" },
       { name: "입관용품", desc: "종교별 약 20종", image: "/images/products/embalming-supplies-v2.jpg" },
     ],
@@ -95,7 +95,7 @@ const mubinsoCategories: ProductCategory[] = [
   {
     title: "차량 지원",
     items: [
-      { name: "장의차량", desc: "리무진", image: "/images/products/hearse-limo.jpg" },
+      { name: "장의차량", desc: "고인전용 리무진(화장장 이송)", image: "/images/products/hearse-limo.jpg" },
     ],
   },
   {
@@ -130,7 +130,7 @@ const generalCategories: ProductCategory[] = [
   {
     title: "고인 용품",
     items: [
-      { name: "수의", desc: "국내산 면 100%", image: "/images/products/shroud.jpg" },
+      { name: "수의", desc: "고급수의(한국3호)", image: "/images/products/shroud.jpg" },
       { name: "관", desc: "오동나무 보통 또는 특관", image: "/images/products/coffin.jpg" },
       { name: "입관용품", desc: "종교별 약 20종 (프리미엄 고인 샴푸)", image: "/images/products/embalming-supplies-v2.jpg" },
     ],
@@ -241,7 +241,7 @@ const vipCategories: ProductCategory[] = [
   {
     title: "고인 용품",
     items: [
-      { name: "수의", desc: "최고급 대마수의", image: "/images/products/shroud.jpg" },
+      { name: "수의", desc: "최고급수의(한국5호)", image: "/images/products/shroud.jpg" },
       { name: "관", desc: "오동나무 특관", image: "/images/products/coffin.jpg" },
       { name: "입관용품", desc: "종교별 약 20종 (프리미엄 고인 샴푸)", image: "/images/products/embalming-supplies-v2.jpg" },
     ],
@@ -260,7 +260,7 @@ const vipCategories: ProductCategory[] = [
   {
     title: "차량 지원",
     items: [
-      { name: "장의차량", desc: "최고급 리무진 + 우등 대형버스", image: "/images/products/hearse-limo-bus.jpg" },
+      { name: "장의차량", desc: "최고급 리무진 + 우등 대형버스 · 관내제공", image: "/images/products/hearse-limo-bus.jpg" },
       { name: "긴급 이송차량", desc: "시내(관내) 제공", image: "/images/products/emergency-vehicle.jpg" },
     ],
   },
@@ -294,8 +294,8 @@ export type PlanSummaryRow = { label: string; value: string; sub?: string };
 export const planSummaryRows: Record<ProductPlanId, PlanSummaryRow[]> = {
   mubinso: [
     { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명" },
-    { label: "차량 지원", value: "리무진" },
-    { label: "입관 용품", value: "규격관, 일반 수의", sub: "결속용품" },
+    { label: "차량 지원", value: "고인전용 리무진(화장장 이송)" },
+    { label: "입관 용품", value: "규격관, 고급수의(한국1호)", sub: "결속용품" },
     { label: "빈소 용품", value: "영정용 소품" },
   ],
   family: [
@@ -307,13 +307,13 @@ export const planSummaryRows: Record<ProductPlanId, PlanSummaryRow[]> = {
   general: [
     { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 3명 (1인 8시간)" },
     { label: "차량 지원", value: "리무진 또는 대형버스 (택1)", sub: "관내제공" },
-    { label: "입관 용품", value: "오동나무 특관, 삼베 고급 수의", sub: "생화 꽃장식, 입관용품" },
+    { label: "입관 용품", value: "오동나무 특관, 고급수의(한국3호)", sub: "생화 꽃장식, 입관용품" },
     { label: "빈소 용품", value: "표준 빈소용품 일체", sub: "헌화 국화 30송이" },
   ],
   vip: [
     { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 4명 (1인 8시간)" },
-    { label: "차량 지원", value: "최고급 리무진 + 우등 대형버스" },
-    { label: "입관 용품", value: "오동나무 특관, 최고급 대마수의", sub: "고급 생화 꽃장식, 고급용품" },
+    { label: "차량 지원", value: "최고급 리무진 + 우등 대형버스", sub: "관내제공" },
+    { label: "입관 용품", value: "오동나무 특관, 최고급수의(한국5호)", sub: "고급 생화 꽃장식, 고급용품" },
     { label: "빈소 용품", value: "고급 빈소용품 일체", sub: "헌화 국화 30송이" },
   ],
 };
