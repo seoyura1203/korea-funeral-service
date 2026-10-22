@@ -185,7 +185,7 @@ const familyCategories: ProductCategory[] = [
   {
     title: "고인 용품",
     items: [
-      { name: "수의", desc: "인견 수의", image: "/images/products/shroud.jpg" },
+      { name: "수의", desc: "고급수의(한국2호)", image: "/images/products/shroud.jpg" },
       { name: "관", desc: "오동나무 규격관", image: "/images/products/coffin.jpg" },
       { name: "입관용품", desc: "종교별 약 20종", image: "/images/products/embalming-supplies-v2.jpg" },
     ],
@@ -301,7 +301,7 @@ export const planSummaryRows: Record<ProductPlanId, PlanSummaryRow[]> = {
   family: [
     { label: "전문 인력", value: "장례지도사 1명 · 입관지도사 1명 · 의전도우미 2명 (1인 8시간)" },
     { label: "차량 지원", value: "리무진 또는 대형버스 (택1)", sub: "관내제공" },
-    { label: "입관 용품", value: "오동나무 규격관, 인견 수의", sub: "생화 꽃장식, 입관용품" },
+    { label: "입관 용품", value: "오동나무 규격관, 고급수의(한국2호)", sub: "생화 꽃장식, 입관용품" },
     { label: "빈소 용품", value: "향·초·위패·방명록 일체" },
   ],
   general: [
