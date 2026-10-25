@@ -29,7 +29,7 @@ export const productPlans: ProductPlan[] = [
   {
     id: "family",
     name: "가족장",
-    price: 2_500_000,
+    price: 2_200_000,
     points: [
       "가까운 가족 중심의 조용하고 정갈한 장례",
       "실속 있는 구성으로 부담은 줄이고 예는 다하는 선택",
@@ -39,7 +39,7 @@ export const productPlans: ProductPlan[] = [
   {
     id: "general",
     name: "일반장",
-    price: 2_800_000,
+    price: 2_500_000,
     points: [
       "빈소 마련부터 발인까지 3일장 표준 절차",
       "조문객 접객까지 폭넓게 지원",

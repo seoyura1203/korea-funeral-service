@@ -5,7 +5,7 @@ import ProductPlanDetail from "@/components/products/ProductPlanDetail";
 
 export const metadata: Metadata = {
   title: "일반장",
-  description: "빈소를 포함한 표준 3일장, 일반장 280만원 안내.",
+  description: "빈소를 포함한 표준 3일장, 일반장 250만원 안내.",
 };
 
 export default function GeneralProductPage() {
