@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import { usePopupClosed } from "@/lib/popup-state";
+
 /**
  * 히어로 섹션. PC/모바일 모두 동일한 구성입니다:
  * 1) 검은 배경의 "장례, 우리는 왜 미리 준비하기 어려울까요?" 말풍선 섹션
@@ -10,6 +12,10 @@ import Image from "next/image";
  * 두 영역은 이미지 상단의 검은 그라디언트로 부드럽게 이어집니다.
  */
 export default function HeroSection() {
+  // 메인 팝업이 닫힌 뒤에야 말풍선 애니메이션이 시작되도록, 그 전에는 투명하게 대기시킵니다.
+  const popupClosed = usePopupClosed();
+  const bubbleAnim = popupClosed ? "animate-fade-in" : "opacity-0";
+
   return (
     <section className="relative overflow-hidden">
       {/* 상조 가입 전 흔한 불안 요소 - 말풍선 3개 */}
@@ -21,7 +27,7 @@ export default function HeroSection() {
           <div className="mt-5 space-y-5 md:mx-auto md:max-w-md">
             <div className="flex justify-start">
               <div
-                className="relative max-w-[78%] animate-fade-in rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white [animation-duration:0.7s] [animation-fill-mode:backwards]"
+                className={`relative max-w-[78%] ${bubbleAnim} rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white [animation-duration:0.7s] [animation-fill-mode:backwards]`}
                 style={{ animationDelay: "0ms" }}
               >
                 장례, 추가비용이 너무 많이 붙어요.
@@ -30,7 +36,7 @@ export default function HeroSection() {
             </div>
             <div className="flex justify-end">
               <div
-                className="relative max-w-[78%] animate-fade-in rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white [animation-duration:0.7s] [animation-fill-mode:backwards]"
+                className={`relative max-w-[78%] ${bubbleAnim} rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white [animation-duration:0.7s] [animation-fill-mode:backwards]`}
                 style={{ animationDelay: "200ms" }}
               >
                 달마다 부담스럽게 납입금을 내야해요.
@@ -39,7 +45,7 @@ export default function HeroSection() {
             </div>
             <div className="flex justify-start">
               <div
-                className="relative max-w-[78%] animate-fade-in rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white [animation-duration:0.7s] [animation-fill-mode:backwards]"
+                className={`relative max-w-[78%] ${bubbleAnim} rounded-2xl bg-neutral-800 px-5 py-4 text-center text-base font-bold leading-snug text-white [animation-duration:0.7s] [animation-fill-mode:backwards]`}
                 style={{ animationDelay: "400ms" }}
               >
                 상조 가입하기에 번거로워요.
