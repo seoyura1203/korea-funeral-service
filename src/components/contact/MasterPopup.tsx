@@ -118,7 +118,7 @@ export default function MasterPopup() {
               />
             </div>
             <div className="relative -mt-5 px-4 pb-4 text-center">
-              <p className="text-[14px] font-medium text-brand-600">
+              <p className="text-[17px] font-medium text-brand-600">
                 장례 명장이 직접 운영합니다.
               </p>
               <p className="mt-1 whitespace-nowrap font-serif text-[22px] font-bold leading-[1.3] text-brand-900">
@@ -155,7 +155,7 @@ export default function MasterPopup() {
             style={{ backgroundImage: "url(/images/popup/master-desktop.jpg)" }}
           >
             <div className="absolute inset-y-0 left-[42%] right-10 flex flex-col justify-center">
-              <p className="text-[14px] font-medium text-brand-600">
+              <p className="text-[17px] font-medium text-brand-600">
                 장례 명장이 직접 운영합니다.
               </p>
               <p className="mt-3 whitespace-nowrap font-serif text-[28px] font-bold leading-[1.3] text-brand-900">
