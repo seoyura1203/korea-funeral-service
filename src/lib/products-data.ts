@@ -83,7 +83,7 @@ const mubinsoCategories: ProductCategory[] = [
   {
     title: "고인 용품",
     items: [
-      { name: "수의", desc: "고급수의(한국1호)", image: "/images/products/shroud-green.jpg" },
+      { name: "수의", desc: "고급수의(한국1호)", image: "/images/products/shroud-beige.jpg" },
       { name: "관", desc: "오동나무 보통 또는 특관", image: "/images/products/coffin.jpg" },
       { name: "입관용품", desc: "종교별 약 20종", image: "/images/products/embalming-supplies-v2.jpg" },
     ],
@@ -185,7 +185,7 @@ const familyCategories: ProductCategory[] = [
   {
     title: "고인 용품",
     items: [
-      { name: "수의", desc: "고급수의(한국2호)", image: "/images/products/shroud-green.jpg" },
+      { name: "수의", desc: "고급수의(한국2호)", image: "/images/products/shroud-beige.jpg" },
       { name: "관", desc: "오동나무 규격관", image: "/images/products/coffin.jpg" },
       { name: "입관용품", desc: "종교별 약 20종", image: "/images/products/embalming-supplies-v2.jpg" },
     ],
