@@ -38,7 +38,7 @@ function CredentialList({ className }: { className?: string }) {
   return (
     <ul className={className}>
       {credentials.map(({ icon: Icon, label }) => (
-        <li key={label} className="flex items-center gap-2 text-[13px] text-brand-900">
+        <li key={label} className="flex items-center gap-2 text-[14px] text-brand-900">
           <Icon className="h-4 w-4 shrink-0 text-brand-600" aria-hidden />
           {label}
         </li>
@@ -158,10 +158,8 @@ export default function MasterPopup() {
               <p className="text-[14px] font-medium text-brand-600">
                 장례 명장이 직접 운영합니다.
               </p>
-              <p className="mt-3 font-serif text-[34px] font-bold leading-[1.3] text-brand-900">
-                슬픈 이별,
-                <br />
-                아름다운 배웅.
+              <p className="mt-3 whitespace-nowrap font-serif text-[28px] font-bold leading-[1.3] text-brand-900">
+                슬픈 이별, 아름다운 배웅.
               </p>
               <p className="mt-4 text-[14px] leading-[1.8] text-neutral-700">
                 마지막 배웅에도 품격의 차이가 있습니다.
