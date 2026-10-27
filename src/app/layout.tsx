@@ -17,13 +17,19 @@ export async function generateMetadata(): Promise<Metadata> {
     : undefined;
 
   return {
-    metadataBase: new URL("https://www.koreafuneral.co.kr"),
+    metadataBase: new URL("https://kuijeon.com"),
     title: {
       default: settings.site_name,
       template: `%s | ${settings.site_name}`,
     },
     description: settings.site_description ?? undefined,
     keywords,
+    // 네이버 서치어드바이저 사이트 소유확인 메타태그 (<head>에 출력됨)
+    verification: {
+      other: {
+        "naver-site-verification": "618f9df0bd527cf573c08f60bcab303475392d8b",
+      },
+    },
     icons: settings.favicon_url ? { icon: settings.favicon_url } : undefined,
     openGraph: {
       type: "website",

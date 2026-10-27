@@ -39,7 +39,7 @@ export default function AdminLoginPage() {
               id="email"
               name="email"
               type="email"
-              placeholder="admin@koreafuneral.co.kr"
+              placeholder="admin@kuijeon.com"
               autoComplete="email"
               required
             />
