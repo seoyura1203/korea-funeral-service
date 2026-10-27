@@ -8,6 +8,7 @@ import MasterPopup from "@/components/contact/MasterPopup";
 // <KakaoFloatingButton /> 렌더링 부분의 주석을 해제하세요.
 // import KakaoFloatingButton from "@/components/layout/KakaoFloatingButton";
 import MobileStickyBar from "@/components/layout/MobileStickyBar";
+import NaverAnalytics from "@/components/layout/NaverAnalytics";
 
 /**
  * /admin 경로에서는 공개 사이트의 헤더/푸터/모바일 하단바를 숨깁니다.
@@ -40,6 +41,7 @@ export default function ConditionalChrome({
       {footer}
       {/* <KakaoFloatingButton /> */}
       <MobileStickyBar phone={phone} />
+      <NaverAnalytics />
       {/* 메인 페이지에서만 장례 명장 소개 팝업을 띄웁니다 */}
       {pathname === "/" && <MasterPopup />}
     </>
