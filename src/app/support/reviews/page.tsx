@@ -6,7 +6,7 @@ import ReviewsGrid from "./ReviewsGrid";
 
 export const metadata: Metadata = {
   title: "고객후기",
-  description: "한국의전서비스를 이용하신 고객들의 후기와 사례입니다.",
+  description: "한국의전서비스와 함께한 유가족분들의 실제 후기입니다.",
 };
 
 export const revalidate = 0;

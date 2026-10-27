@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL("https://kuijeon.com"),
     title: {
       default: settings.site_name,
-      template: `%s | ${settings.site_name}`,
+      template: `후불제 장례 ${settings.site_name} | %s`,
     },
     description: settings.site_description ?? undefined,
     keywords,

@@ -8,7 +8,7 @@ import { getSiteSettings } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "상담문의",
-  description: "한국의전서비스에 상담을 신청하세요. 24시간 전문 상담사가 도와드립니다.",
+  description: "갑작스러운 장례, 24시간 언제든 전화(1670-1024)나 상담 신청으로 문의하세요. 상황에 맞는 상품과 비용을 안내해 드립니다.",
 };
 
 export const revalidate = 0;

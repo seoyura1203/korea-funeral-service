@@ -10,7 +10,7 @@ import {
 
 export const metadata: Metadata = {
   title: "자주 묻는 질문",
-  description: "한국의전서비스 상조 서비스에 대해 자주 묻는 질문을 모았습니다.",
+  description: "장례 비용 안내, 심야 상담, 지방 서비스, 장지 선택 등 장례에 대해 자주 묻는 질문과 답변을 모았습니다.",
 };
 
 const faqs = [

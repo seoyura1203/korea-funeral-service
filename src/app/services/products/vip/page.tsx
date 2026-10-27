@@ -4,8 +4,8 @@ import PageHeader from "@/components/layout/PageHeader";
 import ProductPlanDetail from "@/components/products/ProductPlanDetail";
 
 export const metadata: Metadata = {
-  title: "VIP",
-  description: "최고급 품목과 인력으로 격식을 갖춘 VIP 장례 상품, 450만원 안내.",
+  title: "VIP 450만원",
+  description: "최고급 수의와 오동나무 특관, 넉넉한 인력으로 격식을 갖춘 VIP 장례 450만원. 구성 품목을 자세히 안내합니다.",
 };
 
 export default function VipProductPage() {

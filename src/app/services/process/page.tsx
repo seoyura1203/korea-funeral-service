@@ -4,7 +4,7 @@ import PageHeader from "@/components/layout/PageHeader";
 
 export const metadata: Metadata = {
   title: "절차안내",
-  description: "임종부터 발인까지 장례 절차를 단계별로 안내합니다.",
+  description: "임종 연락부터 빈소 마련, 입관, 조문, 발인, 장지 안치까지 장례 절차를 단계별로 쉽게 안내합니다.",
 };
 
 const steps = [
