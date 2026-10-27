@@ -2,11 +2,10 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { ImageOff, Pencil, Trash2, X } from "lucide-react";
+import { Pencil, Trash2, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { formatDate } from "@/lib/format";
 import type { Review } from "@/types/supabase";
@@ -56,28 +55,6 @@ function ReviewRow({ review }: { review: Review }) {
         </div>
         <Textarea name="content" defaultValue={review.content} rows={4} />
 
-        <div className="space-y-1.5">
-          <Label htmlFor={`image-${review.id}`}>첨부 이미지</Label>
-          {review.image_url ? (
-            <div className="flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={review.image_url}
-                alt=""
-                className="h-14 w-14 shrink-0 rounded-md object-cover"
-              />
-              <label className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                <input type="checkbox" name="remove_image" value="true" />
-                기존 이미지 삭제
-              </label>
-            </div>
-          ) : null}
-          <Input id={`image-${review.id}`} name="image" type="file" accept="image/*" />
-          <p className="text-xs text-muted-foreground">
-            새 이미지를 선택하면 기존 이미지를 대체합니다.
-          </p>
-        </div>
-
         <div className="flex gap-2">
           <Button type="button" size="sm" disabled={pending} onClick={handleSave}>
             {pending ? "저장 중..." : "저장"}
@@ -100,18 +77,6 @@ function ReviewRow({ review }: { review: Review }) {
   return (
     <div className="flex flex-col gap-3 bg-card p-4 sm:flex-row sm:items-start sm:justify-between">
       <div className="flex min-w-0 flex-1 gap-3">
-        <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-md bg-secondary">
-          {review.image_url ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={review.image_url}
-              alt=""
-              className="h-full w-full object-cover"
-            />
-          ) : (
-            <ImageOff className="h-4 w-4 text-muted-foreground" />
-          )}
-        </div>
         <div className="min-w-0">
           <p className="font-medium">
             {review.name}

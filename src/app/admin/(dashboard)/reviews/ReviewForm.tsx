@@ -60,15 +60,6 @@ export default function ReviewForm() {
             />
           </div>
 
-          <div className="space-y-1.5">
-            <Label htmlFor="image">첨부 이미지</Label>
-            <Input id="image" name="image" type="file" accept="image/*" />
-            <p className="text-xs text-muted-foreground">
-              선택 사항입니다. 첨부하면 리뷰 카드 하단에 표시되고, 클릭 시
-              이미지가 크게 보입니다. (최대 10MB)
-            </p>
-          </div>
-
           {state.error && (
             <p className="text-sm text-destructive">{state.error}</p>
           )}
