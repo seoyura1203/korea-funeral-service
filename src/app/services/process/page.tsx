@@ -51,7 +51,7 @@ export default function ProcessPage() {
       <section className="section-padding">
         <div className="container">
           <div className="mx-auto max-w-3xl">
-            <ol className="relative border-l border-border pl-8">
+            <ol className="relative ml-4 border-l border-border pl-8 md:ml-0">
               {steps.map((step, idx) => (
                 <li key={step.title} className="mb-10 last:mb-0">
                   <span className="absolute -left-[15px] flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">

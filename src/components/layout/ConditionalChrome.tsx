@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 
 import Header from "@/components/layout/Header";
-import MasterPopup from "@/components/contact/MasterPopup";
 // 카카오톡 상담 버튼은 요청으로 잠시 비활성화했습니다. 다시 켜려면 아래 import와
 // <KakaoFloatingButton /> 렌더링 부분의 주석을 해제하세요.
 // import KakaoFloatingButton from "@/components/layout/KakaoFloatingButton";
@@ -42,8 +41,6 @@ export default function ConditionalChrome({
       {/* <KakaoFloatingButton /> */}
       <MobileStickyBar phone={phone} />
       <NaverAnalytics />
-      {/* 메인 페이지에서만 장례 명장 소개 팝업을 띄웁니다 */}
-      {pathname === "/" && <MasterPopup />}
     </>
   );
 }

@@ -11,6 +11,7 @@ import ServiceCards from "@/components/sections/ServiceCards";
 import HistorySection from "@/components/sections/HistorySection";
 import ReviewsPreview from "@/components/sections/ReviewsPreview";
 import FaqSection from "@/components/sections/FaqSection";
+import MasterIntroSection from "@/components/sections/MasterIntroSection";
 import EmergencyCallSection from "@/components/sections/EmergencyCallSection";
 import { getLatestReviews, getSiteSettings } from "@/lib/queries";
 import { productPlans } from "@/lib/products-data";
@@ -45,10 +46,11 @@ export default async function HomePage() {
     <>
       <HeroSection />
       <FuneralInsightSection />
-      <EmergencyCallSection phone={phone} />
-      <HistorySection />
       <ServiceCards />
+      <MasterIntroSection />
+      <EmergencyCallSection phone={phone} />
       <ReviewsPreview reviews={reviews} />
+      <HistorySection />
       <FaqSection />
       <QuickContactBar phone={phone} />
     </>

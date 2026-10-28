@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 
-import { usePopupClosed } from "@/lib/popup-state";
-
 /**
  * 히어로 섹션. PC/모바일 모두 동일한 구성입니다:
  * 1) 검은 배경의 "장례, 우리는 왜 미리 준비하기 어려울까요?" 말풍선 섹션
@@ -12,9 +10,8 @@ import { usePopupClosed } from "@/lib/popup-state";
  * 두 영역은 이미지 상단의 검은 그라디언트로 부드럽게 이어집니다.
  */
 export default function HeroSection() {
-  // 메인 팝업이 닫힌 뒤에야 말풍선 애니메이션이 시작되도록, 그 전에는 투명하게 대기시킵니다.
-  const popupClosed = usePopupClosed();
-  const bubbleAnim = popupClosed ? "animate-fade-in" : "opacity-0";
+  // 팝업을 없앴으므로 페이지가 뜨자마자 말풍선 애니메이션이 시작됩니다.
+  const bubbleAnim = "animate-fade-in";
 
   return (
     <section className="relative overflow-hidden">
