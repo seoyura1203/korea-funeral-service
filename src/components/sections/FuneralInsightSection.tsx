@@ -58,26 +58,10 @@ function useInView<T extends HTMLElement>(threshold = 0.25) {
   return { ref, inView };
 }
 
-function useCountUp(target: number, active: boolean, duration = 1100) {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    if (!active) return;
-    let raf: number;
-    const start = performance.now();
-
-    const tick = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(target * eased);
-      if (progress < 1) raf = requestAnimationFrame(tick);
-    };
-
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [active, target, duration]);
-
-  return value;
+// 퍼센트 숫자는 카운트업 애니메이션 없이 처음부터 실제 값을 그대로 보여줍니다.
+// (막대·도넛이 채워지는 애니메이션은 그대로 유지)
+function useCountUp(target: number, _active?: boolean, _duration?: number) {
+  return target;
 }
 
 // 최댓값 기준으로 시각적으로 보기 좋게 스케일링한 막대 너비(%)

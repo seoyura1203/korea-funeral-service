@@ -79,7 +79,7 @@ export default function HistorySection() {
                     <div className="relative aspect-[450/339] w-full">
                       <Image
                         src={h.image}
-                        alt={h.title}
+                        alt={h.alt}
                         fill
                         className="object-cover"
                         sizes="(min-width: 1024px) 380px, (min-width: 640px) 45vw, 90vw"

@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import { productPlans } from "@/lib/products-data";
+
 /**
  * 히어로 섹션. PC/모바일 모두 동일한 구성입니다:
  * 1) 검은 배경의 "장례, 우리는 왜 미리 준비하기 어려울까요?" 말풍선 섹션
@@ -17,6 +19,12 @@ export default function HeroSection() {
     <section className="relative overflow-hidden">
       {/* 상조 가입 전 흔한 불안 요소 - 말풍선 3개 */}
       <div className="relative space-y-5 bg-black px-6 pb-10 pt-14 md:pb-14 md:pt-20">
+        {/* 페이지의 대표 제목(H1). 디자인은 그대로 두고 검색엔진·AI·스크린리더용으로만 제공합니다. */}
+        <h1 className="sr-only">
+          월 납입금 0원 후불제 장례, 한국의전서비스 - 무빈소장{" "}
+          {Math.round(productPlans.find((p) => p.id === "mubinso")!.price / 10000)}
+          만원부터 24시간 상담
+        </h1>
         <div className="mx-auto max-w-2xl">
           <h2 className="pb-1 text-center font-serif text-[2rem] font-bold leading-snug text-white md:text-4xl">
             장례, 우리는 왜 미리 준비하기 어려울까요?

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { HeartHandshake, ShieldCheck, Sparkles, Users2 } from "lucide-react";
 
 import PageHeader from "@/components/layout/PageHeader";
+import MasterIntroSection from "@/components/sections/MasterIntroSection";
 import {
   Card,
   CardContent,
@@ -50,6 +51,9 @@ export default function AboutPage() {
         description="한국의전서비스가 걸어온 길, 지키는 원칙, 그리고 함께한 순간들을 소개합니다."
         breadcrumbs={[{ title: "회사소개" }]}
       />
+
+      {/* 명장 소개 (메인페이지와 동일한 섹션) */}
+      <MasterIntroSection />
 
       {/* 인사말 */}
       <section className="section-padding">
@@ -146,7 +150,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[450/339] w-full">
                   <Image
                     src={h.image}
-                    alt={h.title}
+                    alt={h.alt}
                     fill
                     className="object-cover"
                     sizes="(min-width: 768px) 400px, 90vw"

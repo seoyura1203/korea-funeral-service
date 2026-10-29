@@ -37,7 +37,7 @@ export default function MasterIntroSection() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/popup/master-mobile.jpg"
-            alt="대한민국 전통 장례 명장"
+            alt="대한민국 전통 장례 명장 조효제"
             className="h-full w-full object-cover object-top"
             loading="lazy"
           />
@@ -77,6 +77,8 @@ export default function MasterIntroSection() {
       {/* 높이는 600px로 고정하고, 이미지는 최대 1440px(=600px × 2.4)까지만 보여줍니다.
           큰 모니터에서 좌우에 남는 공간은 섹션 배경색(#FEFBF6)으로 채워집니다. */}
       <div
+        role="img"
+        aria-label="대한민국 전통 장례 명장 조효제"
         className="relative mx-auto hidden h-[600px] w-full max-w-[1440px] bg-cover bg-center bg-no-repeat lg:block"
         style={{ backgroundImage: "url(/images/popup/master-pc-full-v2.jpg)" }}
       >

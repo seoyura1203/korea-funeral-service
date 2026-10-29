@@ -6,6 +6,8 @@ export type HistoryItem = {
   image: string;
   title: string;
   subtitle: string;
+  /** 이미지 대체텍스트(alt). 검색엔진·AI가 사진 내용을 이해하도록 핵심 정보를 담습니다. */
+  alt: string;
 };
 
 export const history: HistoryItem[] = [
@@ -13,30 +15,36 @@ export const history: HistoryItem[] = [
     image: "/images/history/01-master-cert.jpg",
     title: "전통장례명장",
     subtitle: "(전명제21-명238호)",
+    alt: "대한민국 전통 장례 명장 조효제 인증서 (전명제21-명238호)",
   },
   {
     image: "/images/history/02-sewol.jpg",
     title: "故 세월호 사고 국민장",
     subtitle: "빈소설치(경남도청) 및 기획 총괄관리",
+    alt: "세월호 사고 국민장 빈소설치(경남도청) 및 기획 총괄관리 - 대한민국 전통 장례 명장 조효제",
   },
   {
     image: "/images/history/03-roh-moohyun.jpg",
     title: "故 노무현 대통령 국민장",
     subtitle: "빈소설치(경남도청) 및 기획 총괄관리",
+    alt: "노무현 대통령 국민장 빈소설치(경남도청) 및 기획 총괄관리 - 대한민국 전통 장례 명장 조효제",
   },
   {
     image: "/images/history/04-cheonan.jpg",
     title: "故 천안함 46용사 해군장",
     subtitle: "빈소설치(경남도청) 및 기획 총괄관리",
+    alt: "천안함 46용사 해군장 빈소설치(경남도청) 및 기획 총괄관리 - 대한민국 전통 장례 명장 조효제",
   },
   {
     image: "/images/history/05-kim-daejung.jpg",
     title: "故 김대중 대통령 국민장",
     subtitle: "빈소설치(경남도청) 및 기획 총괄관리",
+    alt: "김대중 대통령 국민장 빈소설치(경남도청) 및 기획 총괄관리 - 대한민국 전통 장례 명장 조효제",
   },
   {
     image: "/images/history/06-kim-youngsam.jpg",
     title: "故 김영삼 대통령 국민장",
     subtitle: "빈소설치(경남도청) 및 기획 총괄관리",
+    alt: "김영삼 대통령 국민장 빈소설치(경남도청) 및 기획 총괄관리 - 대한민국 전통 장례 명장 조효제",
   },
 ];

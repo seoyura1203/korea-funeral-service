@@ -16,6 +16,8 @@ import EmergencyCallSection from "@/components/sections/EmergencyCallSection";
 import { getLatestReviews, getSiteSettings } from "@/lib/queries";
 import { productPlans } from "@/lib/products-data";
 import { siteConfig } from "@/lib/site-config";
+import { homeFaqs } from "@/lib/faq-data";
+import { faqJsonLd, organizationJsonLd } from "@/lib/structured-data";
 
 // 검색 결과(네이버/구글)에 보일 메인 제목·설명 문구입니다.
 // 무빈소장 금액은 상품 데이터에서 가져오므로 가격이 바뀌면 자동으로 따라갑니다.
@@ -44,6 +46,15 @@ export default async function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            organizationJsonLd({ phone, email: settings.email || undefined }),
+            faqJsonLd(homeFaqs),
+          ]),
+        }}
+      />
       <HeroSection />
       <FuneralInsightSection />
       <ServiceCards />

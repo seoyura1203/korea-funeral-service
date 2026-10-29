@@ -106,7 +106,7 @@ export default function MasterPopup() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/popup/master-mobile.jpg"
-                alt="대한민국 전통 장례 명장"
+                alt="대한민국 전통 장례 명장 조효제"
                 className="h-full w-full object-cover object-top"
                 fetchPriority="high"
               />

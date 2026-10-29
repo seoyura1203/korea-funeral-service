@@ -16,14 +16,14 @@ const START_OPTIONS = [
 
 // 지역 지부 좌표 (지도 이미지 전체 캔버스 기준 %, public/images/map/korea-map.png)
 const regions = [
-  { name: "서울·경기", x: 44, y: 24 },
-  { name: "강원", x: 59, y: 14 },
-  { name: "충청", x: 45, y: 37 },
-  { name: "대구·경북", x: 60, y: 37 },
-  { name: "전북", x: 42, y: 47 },
-  { name: "부산·경남", x: 61, y: 54 },
-  { name: "전남", x: 40, y: 57 },
-  { name: "제주", x: 33, y: 94 },
+  { name: "서울·경기", x: 44, y: 24, desc: "서울·인천·경기 전 지역 병원·자택·장례식장으로 출동합니다." },
+  { name: "강원", x: 59, y: 14, desc: "춘천·원주·강릉 등 강원 전 지역으로 출동합니다." },
+  { name: "충청", x: 45, y: 37, desc: "대전·세종·충북·충남 전 지역으로 출동합니다." },
+  { name: "대구·경북", x: 60, y: 37, desc: "대구와 경북 전 지역으로 출동합니다." },
+  { name: "전북", x: 42, y: 47, desc: "전주·익산·군산 등 전북 전 지역으로 출동합니다." },
+  { name: "부산·경남", x: 61, y: 54, desc: "부산·울산·경남(창원 본사) 전 지역으로 출동합니다." },
+  { name: "전남", x: 40, y: 57, desc: "광주와 전남 전 지역으로 출동합니다." },
+  { name: "제주", x: 33, y: 94, desc: "제주 지역 장례식장과 병원으로 출동합니다." },
 ];
 
 export default function EmergencyCallSection({ phone }: { phone: string }) {
@@ -139,6 +139,30 @@ export default function EmergencyCallSection({ phone }: { phone: string }) {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* 지역별 출동 안내 (글) - 지도 이미지는 검색엔진이 읽을 수 없어 글로도 함께 제공합니다. */}
+        <div className="mt-12">
+          <h3 className="font-serif text-xl font-bold md:text-2xl">
+            지역별 출동 안내
+          </h3>
+          <p className="mt-2 text-sm text-muted-foreground md:text-base">
+            어느 지역이든 {phone}로 전화 주시면 가장 가까운 지부의 장례지도사가
+            24시간 즉시 출동합니다.
+          </p>
+          <dl className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {regions.map((r) => (
+              <div
+                key={r.name}
+                className="rounded-xl border border-border bg-card px-4 py-3.5 shadow-sm"
+              >
+                <dt className="text-base font-bold text-foreground">{r.name}</dt>
+                <dd className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {r.desc}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

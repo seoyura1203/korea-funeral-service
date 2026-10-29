@@ -46,6 +46,8 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
+    // 닫혀 있어도 답변 글이 페이지 HTML에 포함되도록(검색엔진·AI가 읽을 수 있게) 항상 렌더링합니다.
+    forceMount
     className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
