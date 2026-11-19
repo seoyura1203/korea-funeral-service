@@ -172,7 +172,14 @@ export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
     return FALLBACK_SITE_SETTINGS;
   }
 
-  return data ?? FALLBACK_SITE_SETTINGS;
+  if (!data) return FALLBACK_SITE_SETTINGS;
+
+  // DB(site_settings)에 예전 사이트명이 남아 있어도 화면·SEO에는 새 이름이 쓰이도록 치환합니다.
+  const rename = (v: unknown) =>
+    typeof v === "string" ? v.replaceAll("한국의전서비스", "한국장례상조") : v;
+  return Object.fromEntries(
+    Object.entries(data).map(([k, v]) => [k, rename(v)])
+  ) as SiteSettings;
 });
 
 /** 노출 중(is_active=true)인 배너를 display_order 순으로 가져옵니다. (메인 히어로 슬라이더) */
