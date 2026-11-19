@@ -6,7 +6,7 @@ import ReviewsGrid from "./ReviewsGrid";
 
 export const metadata: Metadata = {
   title: "고객후기",
-  description: "한국의전서비스와 함께한 유가족분들의 실제 후기입니다.",
+  description: "한국장례상조와 함께한 유가족분들의 실제 후기입니다.",
 };
 
 export const revalidate = 0;
@@ -19,7 +19,7 @@ export default async function ReviewsPage() {
       <PageHeader
         eyebrow="SUPPORT"
         title="고객후기"
-        description="한국의전서비스와 함께하신 고객들의 진솔한 이야기입니다."
+        description="한국장례상조와 함께하신 고객들의 진솔한 이야기입니다."
         breadcrumbs={[{ title: "고객후기" }]}
       />
 

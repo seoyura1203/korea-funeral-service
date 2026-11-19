@@ -37,7 +37,7 @@ export default function ProductCompareTable() {
         <div className="mx-auto mt-8 max-w-5xl overflow-x-auto rounded-2xl border border-border bg-card">
           <table className="w-full min-w-[640px] table-fixed border-collapse text-sm md:text-[0.95rem]">
             <caption className="sr-only">
-              한국의전서비스 장례 상품(무빈소장, 가족장, 일반장, VIP) 가격 및 구성 비교
+              한국장례상조 장례 상품(무빈소장, 가족장, 일반장, VIP) 가격 및 구성 비교
             </caption>
             <thead>
               <tr>

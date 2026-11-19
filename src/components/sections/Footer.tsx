@@ -19,6 +19,8 @@ export default async function Footer() {
         .split(";")
         .map((a) => a.trim())
         .filter(Boolean)
+        // 본사를 맨 앞으로, 나머지 지사는 그 뒤에 (원래 순서 유지)
+        .sort((a, b) => Number(b.startsWith("본사")) - Number(a.startsWith("본사")))
     : [];
 
   return (
@@ -58,7 +60,7 @@ export default async function Footer() {
           </div>
 
           {addressEntries.length > 0 && (
-            <div className="flex flex-col gap-1 text-xs text-brand-200 sm:text-sm">
+            <div className="flex flex-col gap-1 text-xs text-brand-200 sm:text-sm md:flex-row md:flex-wrap md:gap-x-6 md:gap-y-1.5">
               {addressEntries.map((entry, idx) => (
                 <span key={idx} className="flex items-center gap-1.5">
                   <MapPin className="h-3.5 w-3.5 shrink-0" />
@@ -87,13 +89,17 @@ export default async function Footer() {
         </div>
 
         {/* 사업자 정보 (Supabase site_settings 값) */}
-        <div className="mt-3 space-y-0.5 text-xs leading-relaxed text-brand-400">
-          <p>
+        {/* 모바일: 두 줄 / PC(md 이상): 회사명부터 통신판매신고까지 한 줄 */}
+        <div className="mt-3 space-y-0.5 text-xs leading-relaxed text-brand-400 md:space-y-0">
+          <p className="md:inline">
             회사명 : {settings.company_name}
             {settings.owner_name && <>&nbsp;|&nbsp;대표자 : {settings.owner_name}</>}
           </p>
           {(settings.business_number || settings.mos_number) && (
-            <p>
+            <span className="hidden md:inline">&nbsp;|&nbsp;</span>
+          )}
+          {(settings.business_number || settings.mos_number) && (
+            <p className="md:inline">
               {settings.business_number && <>사업자등록번호 : {settings.business_number}</>}
               {settings.business_number && settings.mos_number && <>&nbsp;|&nbsp;</>}
               {settings.mos_number && <>통신판매신고 : {settings.mos_number}</>}

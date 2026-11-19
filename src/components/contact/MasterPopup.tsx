@@ -89,7 +89,7 @@ export default function MasterPopup() {
           aria-describedby={undefined}
         >
           <Dialog.Title className="sr-only">
-            장례 명장이 직접 운영하는 한국의전서비스
+            장례 명장이 직접 운영하는 한국장례상조
           </Dialog.Title>
 
           <Dialog.Close

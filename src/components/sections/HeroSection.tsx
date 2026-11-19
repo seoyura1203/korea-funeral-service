@@ -21,7 +21,7 @@ export default function HeroSection() {
       <div className="relative space-y-5 bg-black px-6 pb-10 pt-14 md:pb-14 md:pt-20">
         {/* 페이지의 대표 제목(H1). 디자인은 그대로 두고 검색엔진·AI·스크린리더용으로만 제공합니다. */}
         <h1 className="sr-only">
-          월 납입금 0원 후불제 장례, 한국의전서비스 - 무빈소장{" "}
+          월 납입금 0원 후불제 장례, 한국장례상조 - 무빈소장{" "}
           {Math.round(productPlans.find((p) => p.id === "mubinso")!.price / 10000)}
           만원부터 24시간 상담
         </h1>
@@ -65,7 +65,7 @@ export default function HeroSection() {
       <div className="relative aspect-[1623/2149] w-full md:hidden">
         <Image
           src="/images/hero-mobile.jpg"
-          alt="한국의전서비스"
+          alt="한국장례상조"
           fill
           priority
           className="object-cover"
@@ -81,7 +81,7 @@ export default function HeroSection() {
       <div className="relative hidden aspect-[3840/1600] w-full md:block">
         <Image
           src="/images/hero-desktop.jpg"
-          alt="한국의전서비스"
+          alt="한국장례상조"
           fill
           priority
           className="object-cover"

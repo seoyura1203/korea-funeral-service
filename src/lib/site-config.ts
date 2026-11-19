@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "한국의전서비스",
-  nameEn: "Korea Uijeon Service",
+  name: "한국장례상조",
+  nameEn: "Korea Funeral Sangjo",
   description:
     "정직과 예를 다하는 장례 상조 서비스. 24시간 전문 상담을 통해 소중한 분을 품격있게 모십니다.",
   phone: "1670-1024",
