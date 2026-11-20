@@ -37,7 +37,19 @@ export async function generateMetadata(): Promise<Metadata> {
       title: settings.og_title ?? settings.site_name,
       description: settings.og_description ?? settings.site_description ?? undefined,
       siteName: settings.site_name,
-      images: settings.og_image_url ? [{ url: settings.og_image_url }] : undefined,
+      // 공유 대표 이미지는 고정 파일을 사용합니다. (public/images/og-image.jpg, 2400x1260)
+      images: [
+        {
+          url: "/images/og-image.jpg",
+          width: 2400,
+          height: 1260,
+          alt: settings.site_name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: ["/images/og-image.jpg"],
     },
   };
 }
