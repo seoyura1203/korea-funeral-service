@@ -6,7 +6,7 @@ export const siteConfig = {
   phone: "1670-1024",
   email: "krf.care@gmail.com",
   address:
-    "서울지부 | 서울시 강동구 양재대로 127번길 55;본사 | 경남 창원시 의창대로 211번길 2",
+    "서울지부 | 서울시 강동구 양재대로 127번길 55;본사 | 경상남도 창원시 의창구 의창대로211번길 2, 2층 202호",
   businessNumber: "000-00-00000",
   ceo: "홍길동",
   salesRegistrationNumber: "제0000-서울강남-00000호",
